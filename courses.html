@@ -9,11 +9,27 @@
     <style>
         /* Embed the custom logo for the page header */
         .header-logo {
-            content: url('https://github.com/sparkbigdataacademy/sparkbigdataacademy.github.io/blob/e633ca1f9856132169ed6efd77cc8ddea6101597/logo.png'); /* REPLACE THIS WITH YOUR LOGO URL */
-            height: 60px; /* Adjust as needed */
+            content: url('https://github.com/sparkdataacademy/sparkdataacademy.github.io/blob/e633ca1f9856132169ed6efd77cc8ddea6101597/logo.png?raw=true'); 
+            height: 60px; 
             width: auto;
             vertical-align: middle;
             margin-right: 15px;
+        }
+        .flagship-course {
+            border: 2px solid #f39c12;
+            background-color: #fffdf5;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+        .badge {
+            background: #f39c12;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -35,91 +51,87 @@
 
     <section id="page-hero">
         <div class="container">
-            <h2>Our Comprehensive Courses</h2>
-            <p>Master the Tools of Tomorrow's Data Landscape</p>
+            <h2>Master the Modern Data Stack</h2>
+            <p>Industry-Led Training by Expert Data Architects</p>
         </div>
     </section>
 
     <section id="courses-list" class="light-bg">
         <div class="container">
-            <p>Our courses are meticulously designed to provide deep dives into essential Big Data technologies. Each program is crafted to ensure practical proficiency and real-world readiness.</p>
+            <p>At <strong>Spark Data Academy</strong>, we bridge the gap between theory and industry-grade engineering. Our curriculum is designed around the 2026 data landscape, focusing on high-performance tools and cloud-native architectures.</p>
+
+            <div class="course-item flagship-course">
+                <span class="badge">Most Popular / Career Track</span>
+                <h3>Full Stack Data Engineering (End-to-End)</h3>
+                <p>Our comprehensive flagship program designed to turn you into a production-ready Data Engineer. Learn the entire lifecycle: from raw data ingestion to cloud-based Lakehouse orchestration.</p>
+                <ul>
+                    <li><strong>Modules Covered:</strong> Advanced SQL, Python for DE, PySpark, Databricks, and Microsoft Fabric (DP-700 Prep).</li>
+                    <li><strong>Real-World Project:</strong> Build a production-grade Jira Analytics Pipeline & Medallion Architecture.</li>
+                    <li><strong>Duration:</strong> 150+ Hours | 16 Weeks</li>
+                    <li><strong>Mode:</strong> Online Live </li>
+                    <li><strong>Outcome:</strong> Portfolio-ready GitHub projects and Job Placement Guidance.</li>
+                </ul>
+                <a href="contact.html" class="button primary">View Full Syllabus</a>
+            </div>
+
+            <hr>
+            <h2 class="text-center" style="margin: 40px 0;">Individual Specialization Modules</h2>
 
             <div class="course-item">
-                <h3>Python for Data Science</h3>
-                <p>Learn Python from scratch, focusing on its powerful libraries (NumPy, Pandas, Matplotlib, Scikit-learn) essential for data manipulation, analysis, and machine learning.</p>
+                <h3>Python & SQL Foundation</h3>
+                <p>The bedrock of Data Engineering. Master complex SQL queries and Python scripting to automate data movements and API integrations.</p>
                 <ul>
-                    <li><strong>Key Learnings:</strong> Data Structures, Control Flow, Data Cleaning & Preprocessing, Exploratory Data Analysis, Basic Machine Learning Algorithms.</li>
-                    <li><strong>Duration:</strong> 40 Hours | 6 Weeks</li>
+                    <li><strong>Key Learnings:</strong> Window Functions, CTEs, Python Data Structures, API Handling, and Error Logging.</li>
+                    <li><strong>Duration:</strong> 40 Hours | 5 Weeks</li>
                     <li><strong>Prerequisites:</strong> Basic computer literacy.</li>
                 </ul>
                 <a href="contact.html" class="button">Inquire Now</a>
             </div>
 
             <div class="course-item">
-                <h3>SQL for Data Management</h3>
-                <p>Master SQL (Structured Query Language) for effective data retrieval, manipulation, and database management. Learn to query, update, and manage large datasets efficiently.</p>
+                <h3>PySpark & Big Data Processing</h3>
+                <p>Learn to handle massive datasets using Apache Spark. Understand distributed computing and performance tuning for enterprise-scale data loads.</p>
                 <ul>
-                    <li><strong>Key Learnings:</strong> SQL Fundamentals, Joins, Subqueries, Stored Procedures, Database Design Principles.</li>
-                    <li><strong>Duration:</strong> 25 Hours | 3 Weeks</li>
-                    <li><strong>Prerequisites:</strong> Basic computer literacy.</li>
-                </ul>
-                <a href="contact.html" class="button">Inquire Now</a>
-            </div>
-
-            <div class="course-item">
-                <h3>PySpark for Big Data Processing</h3>
-                <p>Dive into Apache Spark with Python. Learn to process massive datasets in parallel, handle distributed computing, and perform advanced data analytics using PySpark.</p>
-                <ul>
-                    <li><strong>Key Learnings:</strong> Spark Architecture, RDDs, DataFrames, Spark SQL, Spark Streaming basics, Performance Optimization.</li>
+                    <li><strong>Key Learnings:</strong> Spark Architecture, DataFrames, Spark SQL, Performance Optimization, and Partitioning.</li>
                     <li><strong>Duration:</strong> 50 Hours | 8 Weeks</li>
-                    <li><strong>Prerequisites:</strong> Intermediate Python, Basic SQL.</li>
+                    <li><strong>Prerequisites:</strong> Basic Python and SQL.</li>
                 </ul>
                 <a href="contact.html" class="button">Inquire Now</a>
             </div>
 
             <div class="course-item">
-                <h3>Databricks Unified Analytics Platform</h3>
-                <p>Explore the Databricks Lakehouse Platform, enabling efficient data engineering, machine learning, and data warehousing. Work with notebooks, Delta Lake, and MLflow.</p>
+                <h3>Microsoft Fabric (DP-700 Path)</h3>
+                <p>Master the all-in-one analytics solution from Microsoft. Learn to manage OneLake, Data Factory pipelines, and Synapse engineering within Fabric.</p>
                 <ul>
-                    <li><strong>Key Learnings:</strong> Databricks Workspace, Delta Lake Fundamentals, ETL with Databricks, MLflow Tracking, Data Governance.</li>
+                    <li><strong>Key Learnings:</strong> Fabric Architecture, Lakehouse vs Warehouse, Data Factory, and DP-700 Certification Prep.</li>
+                    <li><strong>Duration:</strong> 30 Hours | 4 Weeks</li>
+                    <li><strong>Prerequisites:</strong> Basic Cloud & SQL knowledge.</li>
+                </ul>
+                <a href="contact.html" class="button">Inquire Now</a>
+            </div>
+
+            <div class="course-item">
+                <h3>Databricks Lakehouse Mastery</h3>
+                <p>Explore the Databricks unified platform. Implement Delta Lake for ACID transactions and build automated ETL pipelines using Delta Live Tables (DLT).</p>
+                <ul>
+                    <li><strong>Key Learnings:</strong> Unity Catalog, Medallion Architecture, Delta Lake, and Databricks Workflow Orchestration.</li>
                     <li><strong>Duration:</strong> 30 Hours | 5 Weeks</li>
-                    <li><strong>Prerequisites:</strong> Basic PySpark, SQL.</li>
+                    <li><strong>Prerequisites:</strong> Intermediate PySpark & SQL.</li>
                 </ul>
                 <a href="contact.html" class="button">Inquire Now</a>
             </div>
 
-            <div class="course-item">
-                <h3>Power BI for Business Intelligence & Visualization</h3>
-                <p>Transform raw data into insightful, interactive dashboards and reports using Microsoft Power BI. Learn data modeling, DAX, and effective visualization techniques.</p>
-                <ul>
-                    <li><strong>Key Learnings:</strong> Data Connection & Transformation, Data Modeling (DAX), Report Design, Interactive Dashboards, Publishing & Sharing.</li>
-                    <li><strong>Duration:</strong> 35 Hours | 4 Weeks</li>
-                    <li><strong>Prerequisites:</strong> Basic Excel, Understanding of data concepts.</li>
-                </ul>
-                <a href="contact.html" class="button">Inquire Now</a>
-            </div>
-
-            <div class="course-item">
-                <h3>Microsoft Fabric (Comprehensive Analytics)</h3>
-                <p>Get introduced to Microsoft Fabric, an all-in-one analytics solution. Understand its various workloads like Data Factory, Synapse Analytics, and Power BI within a unified platform.</p>
-                <ul>
-                    <li><strong>Key Learnings:</strong> Fabric Architecture, Data Engineering in Fabric, Data Warehousing, Real-Time Analytics, Integration with Power BI.</li>
-                    <li><strong>Duration:</strong> 20 Hours | 3 Weeks</li>
-                    <li><strong>Prerequisites:</strong> Familiarity with Cloud concepts, Basic SQL.</li>
-                </ul>
-                <a href="contact.html" class="button">Inquire Now</a>
-            </div>
-
-            <p class="text-center">Ready to kickstart your Big Data journey? Contact us today to learn more about upcoming batch schedules and enrollment details!</p>
+            <p class="text-center" style="margin-top: 50px;"><strong>Not sure which course is right for you?</strong> We offer free career counseling and a roadmap session in <strong>Telugu</strong> or English.</p>
             <div class="text-center">
-                <a href="contact.html" class="button primary">Get in Touch</a>
+                <a href="contact.html" class="button primary">Schedule a Free Call</a>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Spark Data Academy. All rights reserved.</p>
+            <p>&copy; 2026 Spark Data Academy. All rights reserved.</p>
+
             <p>Follow us on <a href="https://www.linkedin.com/company/sparkbigdataacademy" target="_blank">LinkedIn</a> | <a href="mailto:sparkbigdataacademy@gmail.com">Email Us</a></p>
         </div>
     </footer>
