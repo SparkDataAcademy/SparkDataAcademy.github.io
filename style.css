@@ -81,13 +81,14 @@ header nav ul {
 }
 
 header nav ul li {
-    margin-left: 20px;
+    margin-left: 15px;
 }
 
 header nav ul li a {
     color: var(--light-text);
     text-decoration: none;
     font-weight: 600;
+    font-size: 0.95em;
     transition: color 0.3s ease;
 }
 

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Stack Data Engineering Syllabus - Spark Data Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .header-logo {
+            content: url('https://github.com/sparkdataacademy/sparkdataacademy.github.io/blob/e633ca1f9856132169ed6efd77cc8ddea6101597/logo.png?raw=true'); 
+            height: 60px; 
+            width: auto;
+            vertical-align: middle;
+            margin-right: 15px;
+        }
+        .syllabus-header {
+            background: linear-gradient(135deg, var(--primary-color), #0056b3);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .syllabus-header h2 {
+            color: white;
+            margin-bottom: 10px;
+        }
+        .pricing-box {
+            background: #fff;
+            border: 3px solid #28a745;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.2);
+        }
+        .price-original {
+            font-size: 1.5em;
+            color: #999;
+            text-decoration: line-through;
+            margin-right: 15px;
+        }
+        .price-discounted {
+            font-size: 2.2em;
+            color: #28a745;
+            font-weight: bold;
+        }
+        .price-total {
+            font-size: 1.3em;
+            color: var(--dark-text);
+            margin-top: 15px;
+        }
+        .discount-badge {
+            background: #dc3545;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .validity-badge {
+            background: #007bff;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .module-card {
+            background: #fff;
+            border-left: 5px solid var(--primary-color);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        .module-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        .module-card .module-hours {
+            background: var(--secondary-color);
+            color: white;
+            padding: 3px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .module-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .module-card ul li {
+            padding: 5px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        .module-card ul li:before {
+            content: "\2713";
+            color: #28a745;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .schedule-table th, .schedule-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .schedule-table th {
+            background: var(--primary-color);
+            color: white;
+        }
+        .schedule-table tr:hover {
+            background: #f5f5f5;
+        }
+        .milestone-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+        .program-card {
+            background: #fff;
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .program-card.recommended {
+            border-color: #28a745;
+            box-shadow: 0 4px 20px rgba(40, 167, 69, 0.2);
+        }
+        .program-badge {
+            background: #6c757d;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.85em;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .program-badge.recommended {
+            background: #28a745;
+        }
+        .program-badge.premium {
+            background: #ffc107;
+            color: #333;
+        }
+        .program-price {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--dark-text);
+            margin: 15px 0;
+        }
+        .program-price span {
+            color: #28a745;
+        }
+        .program-price .original {
+            color: #999;
+            text-decoration: line-through;
+            font-size: 0.7em;
+        }
+        .program-features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        .program-features li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        .program-features li:before {
+            content: "\2713";
+            color: #28a745;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .program-features li.highlight {
+            color: #28a745;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <span class="header-logo"></span>
+            <h1>Spark Data Academy</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="full-stack-data-engineering-syllabus.html">Data Engineering</a></li>
+                    <li><a href="data-ai-platform-engineering.html">Platform Engineering</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="syllabus-header">
+        <div class="container">
+            <h2>Full Stack Data Engineering</h2>
+            <p>Complete Course Syllabus | Choose Your Learning Path</p>
+            <p style="font-size: 0.9em; margin-top: 10px;">Validity: 2 Years | Online Live Interactive Sessions</p>
+            <p style="font-size: 0.85em; margin-top: 5px;">Certification Prep: DP-700 (Fabric) & DP-750 (Databricks)</p>
+        </div>
+    </section>
+
+    <section class="light-bg">
+        <div class="container">
+            <div class="pricing-box">
+                <span class="discount-badge">33% OFF - Limited Time Offer</span>
+                <br>
+                <span class="validity-badge">Validity: 2 Years</span>
+                <br><br>
+                <span class="price-original">INR 750/hour</span>
+                <span class="price-discounted">INR 500/hour</span>
+                <p style="color: #666; font-size: 0.9em; margin-top: 10px;">All prices in Indian Rupees (INR) | GST Included</p>
+            </div>
+
+            <h2 style="margin: 40px 0 20px;">Choose Your Program</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Select the program that best fits your current skill level and learning goals.</p>
+
+            <div class="program-card">
+                <span class="program-badge">FAST TRACK</span>
+                <h3>Fast Track Program</h3>
+                <p style="color: #666;">For learners with Python/SQL background who want to upskill quickly.</p>
+                <div class="program-price">
+                    <span class="original">INR 750 x 80 = INR 60,000</span><br>
+                    <span>INR 40,000</span> <small style="font-size: 0.5em; color: #666;">(80 Hours x INR 500/hr)</small>
+                </div>
+                <ul class="program-features">
+                    <li class="highlight">80 Hours of Live Training</li>
+                    <li>4 Months Duration (20 Hours/Month)</li>
+                    <li>Python, SQL, PySpark, Databricks</li>
+                    <li>Azure Data Factory & Microsoft Fabric</li>
+                    <li>AWS Basics & Streaming</li>
+                    <li>Git/CI-CD & Career Modules</li>
+                    <li>Capstone Project</li>
+                </ul>
+                <p style="font-size: 0.9em; color: #666;"><strong>Best for:</strong> Programmers, Analysts, or anyone with basic Python/SQL knowledge</p>
+                <a href="contact.html" class="button">Enroll Now</a>
+            </div>
+
+            <div class="program-card recommended">
+                <span class="program-badge recommended">MOST POPULAR - RECOMMENDED</span>
+                <h3>Professional Track Program</h3>
+                <p style="color: #666;">Complete program for career changers. Includes extra foundational hours.</p>
+                <div class="program-price">
+                    <span class="original">INR 750 x 100 = INR 75,000</span><br>
+                    <span>INR 50,000</span> <small style="font-size: 0.5em; color: #666;">(100 Hours x INR 500/hr)</small>
+                </div>
+                <ul class="program-features">
+                    <li class="highlight">100 Hours of Live Training</li>
+                    <li>5 Months Duration (20 Hours/Month)</li>
+                    <li class="highlight">Extra Python & SQL Fundamentals (20 hrs)</li>
+                    <li>Complete PySpark Coverage</li>
+                    <li>Azure Databricks In-Depth</li>
+                    <li>Azure Data Factory & Microsoft Fabric</li>
+                    <li>AWS Basics & Streaming</li>
+                    <li>Git/CI-CD & Career Modules</li>
+                    <li>Capstone Project</li>
+                </ul>
+                <p style="font-size: 0.9em; color: #28a745; font-weight: bold;"><strong>Best for:</strong> Career changers, Fresh graduates, Non-technical professionals</p>
+                <a href="contact.html" class="button primary">Enroll Now</a>
+            </div>
+
+            <div class="program-card">
+                <span class="program-badge premium">COMPREHENSIVE</span>
+                <h3>Comprehensive Track Program</h3>
+                <p style="color: #666;">Most thorough program with extra practice time and hands-on labs.</p>
+                <div class="program-price">
+                    <span class="original">INR 750 x 120 = INR 90,000</span><br>
+                    <span>INR 60,000</span> <small style="font-size: 0.5em; color: #666;">(120 Hours x INR 500/hr)</small>
+                </div>
+                <ul class="program-features">
+                    <li class="highlight">120 Hours of Live Training</li>
+                    <li>6 Months Duration (20 Hours/Month)</li>
+                    <li class="highlight">Complete Python Mastery (20 hrs)</li>
+                    <li class="highlight">Complete SQL Mastery (20 hrs)</li>
+                    <li>Full PySpark Coverage</li>
+                    <li>Azure Databricks In-Depth</li>
+                    <li>Azure Data Factory & Microsoft Fabric</li>
+                    <li>AWS Cloud & Streaming</li>
+                    <li>Git/CI-CD & Career Modules</li>
+                    <li class="highlight">Extra Practice Labs & Assignments (5 hrs)</li>
+                    <li>Capstone Project</li>
+                </ul>
+                <p style="font-size: 0.9em; color: #666;"><strong>Best for:</strong> Complete beginners, Anyone wanting thorough preparation</p>
+                <a href="contact.html" class="button">Enroll Now</a>
+            </div>
+
+            <h2 style="margin: 50px 0 30px;">Detailed Course Roadmap</h2>
+
+            <!-- FAST TRACK ROADMAP -->
+            <div class="module-card">
+                <span class="program-badge">FAST TRACK - 80 HOURS</span>
+                <h3>Fast Track Roadmap (4 Months)</h3>
+                
+                <h4 style="color: var(--secondary-color); margin-top: 20px;">Month 1: Python, SQL & PySpark Core (20 Hours)</h4>
+                <ul>
+                    <li>Python Data Structures: Lists, Dicts, Sets, Tuples</li>
+                    <li>File Handling: CSV, JSON, Parquet, XML</li>
+                    <li>Error Handling and Logging Best Practices</li>
+                    <li>REST API Integration and Data Extraction</li>
+                    <li>Pandas for Data Manipulation</li>
+                    <li>Advanced SQL: Window Functions, CTEs, Joins</li>
+                    <li>Data Modeling: Star Schema vs Snowflake</li>
+                    <li>PySpark Core APIs: RDDs, DataFrames, Spark SQL</li>
+                    <li>Spark DataFrame Transformations</li>
+                    <li>Apache Spark Caching In-depth</li>
+                </ul>
+
+                <h4 style="color: var(--secondary-color); margin-top: 20px;">Month 2: PySpark Advanced & Databricks Basics (20 Hours)</h4>
+                <ul>
+                    <li>Apache Spark Architecture: Driver, Executors</li>
+                    <li>Spark Internals: Catalyst Optimizer, Tungsten</li>
+                    <li>Performance Optimization: Partitioning, Bucketing</li>
+                    <li>Advanced Optimizations: Broadcast Joins, AQE</li>
+                    <li>Reading/Writing Data (HDFS, S3, JDBC, Delta)</li>
+                    <li>Apache Hive Integration with Spark</li>
+                    <li>Azure Databricks Architecture</li>
+                    <li>Cluster Creation Modes & Table Types</li>
+                    <li>Iceberg Managed Tables</li>
+                    <li>Delta Lake In-Depth</li>
+                </ul>
+
+                <h4 style="color: var(--secondary-color); margin-top: 20px;">Month 3: Databricks Advanced, ADF & Fabric (20 Hours)</h4>
+                <ul>
+                    <li>Databricks Copy Into and Autoloader</li>
+                    <li>Lakeflow Declarative Pipelines (DLT)</li>
+                    <li>Medallion Architecture (Bronze, Silver, Gold)</li>
+                    <li>Unity Catalog Governance</li>
+                    <li>Databricks Asset Bundles</li>
+                    <li>Azure Data Factory: Pipelines, Activities</li>
+                    <li>Data Flow and Mapping Data Flows</li>
+                    <li>Microsoft Fabric Architecture & OneLake</li>
+                    <li>Lakehouse vs Warehouse</li>
+                    <li>Fabric Data Engineer Associate (DP-700) Certification Prep</li>
+                    <li>Azure Databricks Data Engineer Associate (DP-750) Certification Prep</li>
+                </ul>
+
+                <h4 style="color: var(--secondary-color); margin-top: 20px;">Month 4: AWS, Streaming, Projects & Career (20 Hours)</h4>
+                <ul>
+                    <li>AWS S3, Athena, Glue, EMR Overview</li>
+                    <li>Spark Structured Streaming</li>
+                    <li>Apache Kafka Architecture</li>
+                    <li>Git/GitHub & CI/CD Pipelines</li>
+                    <li>Capstone: Jira Analytics Pipeline</li>
+                    <li>Resume, LinkedIn & Naukri Profile</li>
+                    <li>Interview Questions & Mock Interviews</li>
+                </ul>
+            </div>
+
+            <!-- PROFESSIONAL TRACK ROADMAP -->
+            <div class="module-card recommended">
+                <span class="program-badge recommended">PROFESSIONAL TRACK - 100 HOURS (RECOMMENDED)</span>
+                <h3>Professional Track Roadmap (5 Months)</h3>
+                
+                <h4 style="color: var(--secondary-color); margin-top: 20px;">Month 1: Python & SQL Fundamentals (20 Hours)</h4>
+                <ul>
+                    <li>Python Basics: Variables, Data Types, Operators</li>
+                    <li>Control Flow: if/else, loops, functions</li>
+                    <li>Python Data Structures: Lists, Dicts, Sets, Tuples</li>
+                    <li>File Handling: CSV, JSON, Parquet, XML</li>
+                    <li>Error Handling and Logging</li>
+                    <li>SQL Basics: SELECT, WHERE, GROUP BY</li>
+                    <li>SQL Joins: INNER, LEFT, RIGHT, FULL</li>
+                    <li>Subqueries and Basic CTEs</li>
+                    <li>Database Design Fundamentals</li>
+                    <li>Practice: Build a simple ETL pipeline</li>
+                </ul>
+
+                <h4 style="color: var(--secondary-color); margin-top: 20px;">Month 2: Advanced Python, SQL & PySpark Core (20 Hours)</h4>
+                <ul>
+                    <li>Python: REST APIs, Pandas, ETL Pipelines</li>
+                    <li>Advanced SQL: Window Functions, Recursive CTEs</li>
+                    <li>Data Modeling: Star Schema vs Snowflake</li>
+                    <li>Stored Procedures, Functions, Indexing</li>
+                    <li>PySpark Core APIs: RDDs, DataFrames</li>
+                    <li>Spark SQL and DataFrame Transformations</li>
+                    <li>Joins, Aggregations in Spark</li>
+                    <li>Apache Spark Caching In-depth</li>
+                    <li>Practice: PySpark data transformations</li>
+                </ul>
+
+                <h4 style="color: var(--secondary-color); margin-top: 20px;">Month 3: PySpark Advanced & Databricks Basics (20 Hours)</h4>
+                <ul>
+                    <li>Apache Spark Architecture Deep Dive</li>
+                    <li>Spark Internals: Catalyst, Tungsten</li>
+                    <li>Performance Optimization Techniques</li>
+                    <li>Advanced Optimizations: AQE, Skew Handling</li>
+                    <li>Reading/Writing Various Data Sources</li>
+                    <li>Azure Databricks Architecture</li>
+                    <li>Cluster Modes & Table Types</li>
+                    <li>Delta Lake In-Depth</li>
+                    <li>Magic Commands & Databricks Utilities</li>
+                    <li>Lakehouse Architecture Overview</li>
+                </ul>
+
+                <h4 style="color: var(--secondary-color); margin-top: 20px;">Month 4: Databricks Advanced, ADF & Fabric (20 Hours)</h4>
+                <ul>
+                    <li>Autoloader and Copy Into</li>
+                    <li>Lakeflow Declarative Pipelines (DLT)</li>
+                    <li>Medallion Architecture Implementation</li>
+                    <li>Unity Catalog Governance</li>
+                    <li>Azure Data Factory Pipelines</li>
+                    <li>Data Flows and Integration Runtimes</li>
+                    <li>Microsoft Fabric Architecture</li>
+                    <li>OneLake, Lakehouse vs Warehouse</li>
+                    <li>Fabric Data Engineer Associate (DP-700) Certification Prep</li>
+                    <li>Azure Databricks Data Engineer Associate (DP-750) Certification Prep</li>
+                </ul>
+
+                <h4 style="color: var(--secondary-color); margin-top: 20px;">Month 5: AWS, Streaming, Projects & Career (20 Hours)</h4>
+                <ul>
+                    <li>AWS S3, Athena, Glue, EMR</li>
+                    <li>Spark Structured Streaming</li>
+                    <li>Apache Kafka Integration</li>
+                    <li>Git/GitHub & CI/CD</li>
+                    <li>Capstone Project: End-to-End Pipeline</li>
+                    <li>Resume, LinkedIn & Naukri Building</li>
+                    <li>Interview Prep & Mock Interviews</li>
+                </ul>
+            </div>
+
+            <!-- COMPREHENSIVE TRACK ROADMAP -->
+            <div class="module-card">
+                <span class="program-badge premium">COMPREHENSIVE TRACK - 120 HOURS</span>
+                <h3>Comprehensive Track Roadmap (6 Months)</h3>
+                
+                <h4 style="color: var(--secondary-color); margin-top: 20px;">Month 1: Python Fundamentals (20 Hours)</h4>
+                <ul>
+                    <li>Python Basics: Variables, Data Types, Operators</li>
+                    <li>Control Flow: if/else, loops, functions</li>
+                    <li>Data Structures: Lists, Dicts, Sets, Tuples</li>
+                    <li>File Handling: CSV, JSON, Parquet, XML</li>
+                    <li>Error Handling and Logging</li>
+                    <li>Working with REST APIs</li>
+                    <li>Pandas for Data Manipulation</li>
+                    <li>Practice Labs: Build 3 Python projects</li>
+                </ul>
+
+                <h4 style="color: var(--secondary-color); margin-top: 20px;">Month 2: SQL Mastery (20 Hours)</h4>
+                <ul>
+                    <li>SQL Basics: SELECT, WHERE, GROUP BY, HAVING</li>
+                    <li>Joins: INNER, LEFT, RIGHT, FULL, CROSS</li>
+                    <li>Subqueries and CTEs</li>
+                    <li>Advanced Window Functions</li>
+                    <li>Stored Procedures, Functions, Triggers</li>
+                    <li>Database Indexing and Performance Tuning</li>
+                    <li>Data Modeling: Star Schema vs Snowflake</li>
+                    <li>Practice Labs: Complex SQL queries</li>
+                </ul>
+
+                <h4 style="color: var(--secondary-color); margin-top: 20px;">Month 3: PySpark Fundamentals & Advanced (20 Hours)</h4>
+                <ul>
+                    <li>Big Data & Distributed Processing Overview</li>
+                    <li>Apache Spark Core APIs: RDDs, DataFrames</li>
+                    <li>Spark SQL and DataFrame Transformations</li>
+                    <li>Joins, Aggregations, Window Functions</li>
+                    <li>Apache Spark Architecture Deep Dive</li>
+                    <li>Spark Internals: Catalyst, Tungsten</li>
+                    <li>Performance Optimization Techniques</li>
+                    <li>Practice: Process large datasets</li>
+                </ul>
+
+                <h4 style="color: var(--secondary-color); margin-top: 20px;">Month 4: Azure Databricks In-Depth (20 Hours)</h4>
+                <ul>
+                    <li>Databricks Architecture & Free Edition</li>
+                    <li>Cluster Creation Modes</li>
+                    <li>Table Types and Iceberg Tables</li>
+                    <li>Magic Commands & Databricks Utilities</li>
+                    <li>Lakehouse Architecture</li>
+                    <li>Delta Lake In-Depth</li>
+                    <li>Autoloader and Copy Into</li>
+                    <li>Lakeflow Declarative Pipelines (DLT)</li>
+                    <li>Medallion Architecture</li>
+                    <li>Unity Catalog & Databricks Asset Bundles</li>
+                </ul>
+
+                <h4 style="color: var(--secondary-color); margin-top: 20px;">Month 5: ADF, Microsoft Fabric & AWS (20 Hours)</h4>
+                <ul>
+                    <li>Azure Data Factory: Pipelines, Activities</li>
+                    <li>Data Flows and Integration Runtimes</li>
+                    <li>Microsoft Fabric Architecture & OneLake</li>
+                    <li>Lakehouse vs Warehouse</li>
+                    <li>Data Factory Pipelines in Fabric</li>
+                    <li>Fabric Data Engineer Associate (DP-700) Certification Prep</li>
+                    <li>Azure Databricks Data Engineer Associate (DP-750) Certification Prep</li>
+                    <li>AWS S3, Athena, Glue</li>
+                    <li>Big Data on AWS: EMR & Redshift</li>
+                </ul>
+
+                <h4 style="color: var(--secondary-color); margin-top: 20px;">Month 6: Streaming, Projects & Career (20 Hours)</h4>
+                <ul>
+                    <li>Spark Structured Streaming</li>
+                    <li>Apache Kafka Integration</li>
+                    <li>Git/GitHub & CI/CD Pipelines</li>
+                    <li>Capstone: End-to-End Jira Analytics Pipeline</li>
+                    <li>Extra Practice Labs & Assignments</li>
+                    <li>Resume, LinkedIn & Naukri Building</li>
+                    <li>Interview Questions & Mock Interviews</li>
+                    <li>Data Structures & Algorithms</li>
+                </ul>
+            </div>
+
+            <h2 style="margin: 50px 0 30px;">Program Comparison</h2>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Fast Track</th>
+                        <th>Professional Track</th>
+                        <th>Comprehensive Track</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Total Hours</strong></td>
+                        <td>80 Hours</td>
+                        <td style="color: #28a745; font-weight: bold;">100 Hours</td>
+                        <td>120 Hours</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Duration</strong></td>
+                        <td>4 Months</td>
+                        <td style="color: #28a745; font-weight: bold;">5 Months</td>
+                        <td>6 Months</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Original Price</strong></td>
+                        <td><s>INR 60,000</s></td>
+                        <td><s>INR 75,000</s></td>
+                        <td><s>INR 90,000</s></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Discounted Price</strong></td>
+                        <td>INR 40,000</td>
+                        <td style="color: #28a745; font-weight: bold;">INR 50,000</td>
+                        <td>INR 60,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Python Hours</strong></td>
+                        <td>8 Hours</td>
+                        <td>15 Hours</td>
+                        <td>20 Hours</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SQL Hours</strong></td>
+                        <td>6 Hours</td>
+                        <td>11 Hours</td>
+                        <td>20 Hours</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PySpark Hours</strong></td>
+                        <td>16 Hours</td>
+                        <td>20 Hours</td>
+                        <td>20 Hours</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Databricks Hours</strong></td>
+                        <td>15 Hours</td>
+                        <td>15 Hours</td>
+                        <td>20 Hours</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Practice Labs</strong></td>
+                        <td>Basic</td>
+                        <td>Moderate</td>
+                        <td style="color: #28a745; font-weight: bold;">Extensive</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Best For</strong></td>
+                        <td>Experienced devs</td>
+                        <td style="color: #28a745; font-weight: bold;">Career changers</td>
+                        <td>Complete beginners</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 style="margin: 40px 0 20px;">Tools & Technologies Covered</h2>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin: 20px 0;">
+                <span style="background: #3498db; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold;">Python</span>
+                <span style="background: #e74c3c; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold;">SQL</span>
+                <span style="background: #e25a1c; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold;">Apache Spark</span>
+                <span style="background: #ff3621; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold;">PySpark</span>
+                <span style="background: #ff3621; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold;">Azure Databricks</span>
+                <span style="background: #0078d4; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold;">Azure Data Factory</span>
+                <span style="background: #7b2d8e; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold;">Microsoft Fabric</span>
+                <span style="background: #ff9900; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold;">AWS S3/Athena/Glue</span>
+                <span style="background: #333; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold;">Delta Lake</span>
+                <span style="background: #1db954; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold;">Apache Kafka</span>
+                <span style="background: #f05033; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold;">Git/GitHub</span>
+                <span style="background: #2e86de; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold;">Apache Hive</span>
+            </div>
+
+            <div class="module-card" style="background: #fff3cd; border-left-color: #ffc107;">
+                <h3 style="color: #856404;">What You'll Get (All Programs)</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 8px 0; padding-left: 30px; position: relative;"><span style="position: absolute; left: 0; color: #28a745; font-weight: bold;">&#10003;</span> Live Interactive Training Sessions</li>
+                    <li style="padding: 8px 0; padding-left: 30px; position: relative;"><span style="position: absolute; left: 0; color: #28a745; font-weight: bold;">&#10003;</span> Real-world Projects with GitHub Portfolio</li>
+                    <li style="padding: 8px 0; padding-left: 30px; position: relative;"><span style="position: absolute; left: 0; color: #28a745; font-weight: bold;">&#10003;</span> Fabric Data Engineer Associate (DP-700) Certification Prep</li>
+                    <li style="padding: 8px 0; padding-left: 30px; position: relative;"><span style="position: absolute; left: 0; color: #28a745; font-weight: bold;">&#10003;</span> Azure Databricks Data Engineer Associate (DP-750) Certification Prep</li>
+                    <li style="padding: 8px 0; padding-left: 30px; position: relative;"><span style="position: absolute; left: 0; color: #28a745; font-weight: bold;">&#10003;</span> Resume, LinkedIn & Naukri Profile Building</li>
+                    <li style="padding: 8px 0; padding-left: 30px; position: relative;"><span style="position: absolute; left: 0; color: #28a745; font-weight: bold;">&#10003;</span> Interview Questions and Mock Interviews</li>
+                    <li style="padding: 8px 0; padding-left: 30px; position: relative;"><span style="position: absolute; left: 0; color: #28a745; font-weight: bold;">&#10003;</span> 2 Years Validity - Learn at Your Own Pace</li>
+                    <li style="padding: 8px 0; padding-left: 30px; position: relative;"><span style="position: absolute; left: 0; color: #28a745; font-weight: bold;">&#10003;</span> 1-on-1 Mentorship Sessions</li>
+                    <li style="padding: 8px 0; padding-left: 30px; position: relative;"><span style="position: absolute; left: 0; color: #28a745; font-weight: bold;">&#10003;</span> Job Placement Guidance</li>
+                </ul>
+            </div>
+
+            <div class="text-center" style="margin-top: 40px;">
+                <p style="font-size: 1.1em; margin-bottom: 20px;"><strong>Not sure which program is right for you?</strong></p>
+                <a href="contact.html" class="button primary" style="font-size: 1.2em; padding: 15px 40px;">Schedule a Free Consultation</a>
+                <p style="margin-top: 15px; color: #666;">Get personalized guidance in <strong>Telugu</strong> or English.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Spark Data Academy. All rights reserved.</p>
+            <p>Follow us on <a href="https://www.linkedin.com/company/sparkbigdataacademy" target="_blank">LinkedIn</a> | <a href="https://wa.me/919030456094" target="_blank">WhatsApp Us</a></p>
+        </div>
+    </footer>
+</body>
+</html>

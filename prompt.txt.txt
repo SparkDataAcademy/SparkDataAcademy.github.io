@@ -1,0 +1,25 @@
+Please open and update the `about.html` file. Locate the "Meet the Founder" or team section and replace the content with the following copy. 
+
+Ensure the layout remains clean, professional, and consistent with the site's existing CSS styling. If there are existing list elements or icons for the expertise section, adapt the new bullet points to match them perfectly.
+
+Here is the exact text to use:
+
+### Meet the Founder & Our Network ###
+
+**M Madhuri Srilakshmi**
+*Founder & Director*
+
+M Madhuri Srilakshmi is the visionary Founder of Spark Data Academy. With a deep passion for empowering the next generation of tech professionals, she founded the academy to bridge the gap between academic theory and real-world engineering challenges. 
+
+Under her leadership, Spark Data Academy operates on a "Industry-First" model. Instead of relying on traditional academic curricula, she curates and collaborates with a network of elite, active Senior Data Architects and Lead Engineers currently working in Top Tech companies and global enterprises. This ensures that every program, assignment, and capstone project reflects live production environments.
+
+Our specialized training network covers cutting-edge technologies and modern data ecosystems:
+*   **Big Data Frameworks:** Apache Spark, PySpark, and Distributed Computing
+*   **Modern Lakehouse Ecosystems:** Azure Databricks, Microsoft Fabric, and Delta Lake architectures
+*   **Enterprise Architecture:** Robust, platform-agnostic Data Platform Design & Scalability
+*   **Next-Gen Data Ops:** Advanced MLOps, LLMOps, and Production Infrastructure Automation
+*   **Cloud Architecture:** Enterprise deployment strategies across Microsoft Azure and AWS
+
+By bringing real-world practitioners directly to the students, Madhuri ensures that Spark Data Academy delivers highly practical, hands-on, and industry-aligned knowledge that truly prepares professionals for modern data roles.
+
+**Languages Supported:** Telugu, English
