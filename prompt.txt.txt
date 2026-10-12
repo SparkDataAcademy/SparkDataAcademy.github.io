@@ -1,25 +1,100 @@
-Please open and update the `about.html` file. Locate the "Meet the Founder" or team section and replace the content with the following copy. 
+Please update the website source code for Spark Data Academy to reflect our updated flagship course structure, modern tech stack, and revised pricing model.
 
-Ensure the layout remains clean, professional, and consistent with the site's existing CSS styling. If there are existing list elements or icons for the expertise section, adapt the new bullet points to match them perfectly.
+### 1. Pricing & Discount Configuration
+* **Standard Monthly Price:** ₹15,000 / month
+* **Discount:** 33% OFF Launch Offer
+* **Final Effective Price:** ₹10,000 / month (₹500 / live hour)
+* **Pacing & Format:** 4 Weeks per Month | 5 Live Sessions/Week (1 Hour/Session = 20 Hours/Month)
+* **Billing Model:** Pay month-by-month; students can enter at their respective level and exit or pause after any 4-week sprint.
 
-Here is the exact text to use:
+---
 
-### Meet the Founder & Our Network ###
+### 2. Deletions & Cleanups (Remove Outdated Content)
+* **Remove AWS entirely:** Delete all references to the standalone AWS Cloud module (S3, Glue, Athena, EMR), AWS paths, and multi-cloud dual tracks.
+* **Remove Standalone Microsoft Fabric Module:** Remove the separate DP-700 15-hour module and micro-tracks.
+* **Remove Micro-Modules Matrix:** Replace the scattered 1-week, 2-week, and 3-week individual courses (e.g., 5 hrs for ₹2,500, 10 hrs for ₹5,000) with a uniform 4-Month Flagship modular program.
+* **Update Certification Target:** Focus the primary certification preparation badge on **DP-750 (Azure Databricks Data Engineer Associate)**.
 
-**M Madhuri Srilakshmi**
-*Founder & Director*
+---
 
-M Madhuri Srilakshmi is the visionary Founder of Spark Data Academy. With a deep passion for empowering the next generation of tech professionals, she founded the academy to bridge the gap between academic theory and real-world engineering challenges. 
+### 3. Curriculum Content to Update
 
-Under her leadership, Spark Data Academy operates on a "Industry-First" model. Instead of relying on traditional academic curricula, she curates and collaborates with a network of elite, active Senior Data Architects and Lead Engineers currently working in Top Tech companies and global enterprises. This ensures that every program, assignment, and capstone project reflects live production environments.
+Update the course structure to the following 4-Month Flagship Modular Program:
 
-Our specialized training network covers cutting-edge technologies and modern data ecosystems:
-*   **Big Data Frameworks:** Apache Spark, PySpark, and Distributed Computing
-*   **Modern Lakehouse Ecosystems:** Azure Databricks, Microsoft Fabric, and Delta Lake architectures
-*   **Enterprise Architecture:** Robust, platform-agnostic Data Platform Design & Scalability
-*   **Next-Gen Data Ops:** Advanced MLOps, LLMOps, and Production Infrastructure Automation
-*   **Cloud Architecture:** Enterprise deployment strategies across Microsoft Azure and AWS
+#### **Month 1: Data Engineering Foundations & Modeling**
+* **Duration:** 4 Weeks (20 Hours)
+* **Pricing Display:** `₹10,000 / month` (strikethrough `₹15,000`, show `33% OFF`)
+* **Target Audience:** Beginners, Non-Programmers, Freshers, BI/SQL Analysts
+* **Key Topics:**
+  - Linux CLI, Bash essentials, and modern developer tooling
+  - Git & GitHub: Branching strategies, Pull Requests, merge conflict handling
+  - Python for DE: Data structures, OOP, file handling (JSON, CSV, Parquet), REST APIs, error logging
+  - Advanced SQL: Window functions (`ROW_NUMBER`, `DENSE_RANK`, `LEAD`/`LAG`), CTEs, recursive queries, index mechanics, query plan optimization
+  - Enterprise Data Modeling: OLTP vs. OLAP, Kimball Dimensional Modeling (Star vs. Snowflake schema), Fact vs. Dimension tables, Slowly Changing Dimensions (SCD Type 1, 2, and 3)
 
-By bringing real-world practitioners directly to the students, Madhuri ensures that Spark Data Academy delivers highly practical, hands-on, and industry-aligned knowledge that truly prepares professionals for modern data roles.
+#### **Month 2: Distributed Compute & Azure Lakehouse**
+* **Duration:** 4 Weeks (20 Hours)
+* **Pricing Display:** `₹10,000 / month` (strikethrough `₹15,000`, show `33% OFF`)
+* **Target Audience:** Developers transitioning into Big Data, QA/ETL/BI Developers
+* **Key Topics:**
+  - Azure Cloud Foundation: Resource hierarchy, ADLS Gen2 hierarchical namespace, Entra ID, Managed Identities, Azure Key Vault
+  - Apache Spark Architecture: Driver, Executors, Tasks, Stages, DAG, Catalyst optimizer
+  - PySpark DataFrame API: Transformations, Actions, aggregations, joins, complex nested JSON schemas
+  - Azure Databricks & Delta Lake: Workspaces, Unity Catalog governance, Delta ACID transactions, Time Travel, schema evolution, Medallion Architecture (Bronze → Silver → Gold)
+  - Azure Data Factory (ADF): Linked Services, Datasets, Copy Pipelines, dynamic parameters, triggers, orchestrating Databricks jobs
 
-**Languages Supported:** Telugu, English
+#### **Month 3: Modern Data Stack & Orchestration**
+* **Duration:** 4 Weeks (20 Hours)
+* **Pricing Display:** `₹10,000 / month` (strikethrough `₹15,000`, show `33% OFF`)
+* **Target Audience:** Engineers building production-ready, testable, and automated pipelines
+* **Key Topics:**
+  - Analytics Engineering with dbt-core: CLI setup, `dbt_project.yml`, profiles, materializations (Views, Tables, Incremental, Ephemeral), Jinja & modular macros
+  - Data Quality & Governance: dbt generic schema tests, custom singular SQL tests, data lineage generation, data contracts
+  - Workflow Orchestration with Apache Airflow: Airflow architecture, local deployment via Docker/Astro CLI, DAG authoring, task dependencies, retries, sensors, `DatabricksSubmitRunOperator`
+  - DE DevOps & CI/CD: Linting with `sqlfluff` and `flake8`, unit testing with `pytest`, automated GitHub Actions workflows deploying dbt models and DAGs
+
+#### **Month 4: Advanced Spark Internals, Streaming, GenAI & System Design**
+* **Duration:** 4 Weeks (20 Hours)
+* **Pricing Display:** `₹10,000 / month` (strikethrough `₹15,000`, show `33% OFF`)
+* **Target Audience:** Working Data Engineers targeting Senior/Lead roles and high-compensation packages
+* **Key Topics:**
+  - Spark Performance Tuning & Optimization: Adaptive Query Execution (AQE), dynamic partition pruning, broadcast vs. sort-merge joins, resolving data skew with salting, memory tuning, `OPTIMIZE`, `Z-ORDER`, Liquid Clustering
+  - Real-Time Event Streaming with Apache Kafka: Distributed architecture, topics, partitions, consumer groups, offset management, high-throughput Python producers
+  - PySpark Structured Streaming & Event Hubs: `readStream`/`writeStream`, micro-batches, windowing, watermarks, stateful processing, checkpointing, Azure Event Hubs Kafka integration
+  - GenAI Data Ingestion & Vector Pipelines: Unstructured text extraction, chunking strategies, local embeddings, vector DB ingestion (ChromaDB / Databricks Vector Search)
+  - Capstone & Placement Prep: End-to-end Jira Analytics Lakehouse pipeline, Enterprise System Design interview scenarios, DP-750 certification prep, resume and portfolio optimization
+
+---
+
+### 4. Interactive Track Selector / Decision Table
+Implement or update the comparison matrix to guide prospective students on their entry point:
+
+| Current Background | Recommended Entry | Total Duration | Total Investment |
+| :--- | :--- | :--- | :--- |
+| **Complete Beginner / Non-IT / Freshers** | **Month 1** (Full 4-Month Track) | 4 Months (80 Hours) | **₹40,000** (Pay ₹10,000/mo, originally ₹60,000) |
+| **Developers / QA / BI / Data Analysts** | **Month 2** (Fast-Track) | 3 Months (60 Hours) | **₹30,000** (Pay ₹10,000/mo, originally ₹45,000) |
+| **Working Data Engineers (Upskilling for 20+ LPA)** | **Month 3 or Month 4** | 1–2 Months (20–40 Hours) | **₹10,000 – ₹20,000** (Pay ₹10,000/mo) |
+
+---
+
+### 5. Frontend & UI Requirements
+1. **Badges:** Add a prominent **`33% OFF Launch Offer`** badge next to the pricing card.
+2. **Pricing Component:** Display the price as:  
+   `₹10,000` / month  
+   `<span style="text-decoration: line-through; opacity: 0.6;">₹15,000</span> (Save ₹5,000/mo)`  
+   `₹500 / live hour`
+3. **Zero-Cost Labs Banner:** Add a clear feature callout:  
+   *"100% Free Lab Setup — All practice tools (Databricks Free Edition, dbt-core, Airflow via Docker, Kafka, ChromaDB, GitHub) cost ₹0. No hidden server fees."*
+4. Ensure all call-to-action buttons ("Enroll for Month 1", "Fast-Track from Month 2", "Apply for Advanced Sprint") point cleanly to the respective registration or consultation workflows.
+
+Also display the following tables meaningfully on the website if it makes more sense:
+table 1:
+Month 1 (₹10,000) ──► Month 2 (₹10,000) ──► Month 3 (₹10,000) ──► Month 4 (₹10,000)
+DE Foundations        Azure Lakehouse       Modern Data Stack     Advanced Internals,
+& Modeling            (PySpark & ADF)       (dbt, Airflow, CI/CD) Streaming & System Design
+========================================================================================
+table 2:
+========================================================================================
+SPARK DATA ACADEMY — FLAGSHIP DATA ENGINEERING PROGRAM
+Structure: 4 Sprints | 20 Hours per Sprint (1 hr/day, Mon–Fri) | ₹10,000 per Sprint
+========================================================================================

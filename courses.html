@@ -8,8 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         .header-logo {
-            content: url('https://github.com/sparkdataacademy/sparkdataacademy.github.io/blob/e633ca1f9856132169ed6efd77cc8ddea6101597/logo.png?raw=true'); 
-            height: 60px; 
+            content: url('https://github.com/sparkdataacademy/sparkdataacademy.github.io/blob/e633ca1f9856132169ed6efd77cc8ddea6101597/logo.png?raw=true');
+            height: 60px;
             width: auto;
             vertical-align: middle;
             margin-right: 15px;
@@ -17,38 +17,358 @@
         .flagship-course {
             border: 2px solid #f39c12;
             background-color: #fffdf5;
-            padding: 25px;
-            border-radius: 10px;
+            padding: 30px;
+            border-radius: 12px;
             margin-bottom: 40px;
         }
         .badge {
+            display: inline-block;
             background: #f39c12;
             color: white;
-            padding: 5px 10px;
+            padding: 5px 12px;
             border-radius: 5px;
             font-size: 0.8em;
             text-transform: uppercase;
             font-weight: bold;
+            margin-bottom: 12px;
         }
-        .module-level {
-            display: inline-block;
-            padding: 3px 10px;
+        .badge-launch {
+            background: linear-gradient(135deg, #e74c3c, #f39c12);
+            font-size: 0.95em;
+            padding: 7px 15px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(243, 156, 18, 0.5); }
+            70% { box-shadow: 0 0 0 10px rgba(243, 156, 18, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(243, 156, 18, 0); }
+        }
+        .pricing-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .pricing-card {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: #fff;
             border-radius: 15px;
-            font-size: 0.75em;
+            padding: 35px;
+            text-align: center;
+        }
+        .price-main {
+            font-size: 3em;
             font-weight: bold;
-            margin-left: 10px;
+            margin: 10px 0 5px;
+            line-height: 1.1;
         }
-        .level-beginner {
-            background: #28a745;
-            color: white;
+        .price-main small {
+            font-size: 0.35em;
+            font-weight: 600;
+            opacity: 0.9;
         }
-        .level-intermediate {
-            background: #ffc107;
+        .price-old {
+            text-decoration: line-through;
+            opacity: 0.6;
+            font-size: 1.2em;
+            margin-right: 6px;
+        }
+        .price-save {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.18);
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.9em;
+        }
+        .price-hour {
+            margin-top: 12px;
+            font-size: 1.05em;
+            font-weight: 600;
+        }
+        .pricing-facts {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0;
+            text-align: left;
+        }
+        .pricing-facts li {
+            padding: 7px 0 7px 26px;
+            position: relative;
+            font-size: 0.97em;
+        }
+        .pricing-facts li:before {
+            content: "\2713";
+            color: #28a745;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .lab-banner {
+            background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+            border-left: 6px solid #28a745;
+            border-radius: 8px;
+            padding: 22px 25px;
+            margin: 0 0 40px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+        }
+        .lab-banner h4 {
+            margin: 0 0 8px;
+            color: #1b5e20;
+            font-size: 1.15em;
+        }
+        .lab-banner p {
+            margin: 0;
             color: #333;
         }
-        .level-advanced {
-            background: #dc3545;
-            color: white;
+        .structure-banner {
+            background: #1a1a2e;
+            color: #fff;
+            text-align: center;
+            border-radius: 12px;
+            padding: 25px 20px;
+            margin-bottom: 25px;
+        }
+        .structure-banner h3 {
+            color: #f39c12;
+            margin: 0 0 8px;
+            font-size: 1.25em;
+            letter-spacing: 0.5px;
+        }
+        .structure-banner p {
+            margin: 0;
+            font-weight: 600;
+        }
+        .program-flow {
+            display: flex;
+            align-items: stretch;
+            gap: 8px;
+            margin-bottom: 45px;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+        .flow-step {
+            flex: 1;
+            min-width: 180px;
+            background: #fff;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            padding: 18px 14px;
+            text-align: center;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
+        }
+        .flow-step .flow-month {
+            display: inline-block;
+            background: #007bff;
+            color: #fff;
+            font-weight: bold;
+            font-size: 0.8em;
+            padding: 3px 12px;
+            border-radius: 12px;
+            text-transform: uppercase;
+        }
+        .flow-step .flow-price {
+            display: block;
+            font-weight: bold;
+            color: #333;
+            margin: 10px 0 4px;
+        }
+        .flow-step .flow-title {
+            display: block;
+            font-size: 0.9em;
+            color: #555;
+            line-height: 1.4;
+        }
+        .flow-arrow {
+            align-self: center;
+            font-size: 1.6em;
+            color: #f39c12;
+            font-weight: bold;
+        }
+        .month-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.09);
+            padding: 30px;
+            margin-bottom: 35px;
+            border-top: 5px solid #007bff;
+        }
+        .month-card.m1 { border-top-color: #28a745; }
+        .month-card.m2 { border-top-color: #007bff; }
+        .month-card.m3 { border-top-color: #f39c12; }
+        .month-card.m4 { border-top-color: #dc3545; }
+        .month-head {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        .month-head h3 {
+            margin: 0;
+            color: var(--primary-color);
+        }
+        .month-price {
+            text-align: right;
+            background: #f8f9fa;
+            border: 1px dashed #ccc;
+            border-radius: 8px;
+            padding: 10px 15px;
+            min-width: 210px;
+        }
+        .month-price .mp-now {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #28a745;
+        }
+        .month-price .mp-now small {
+            font-size: 0.55em;
+            color: #555;
+            font-weight: 600;
+        }
+        .month-price .mp-old {
+            text-decoration: line-through;
+            opacity: 0.6;
+            margin-right: 6px;
+        }
+        .month-price .mp-tag {
+            display: inline-block;
+            background: #e74c3c;
+            color: #fff;
+            font-size: 0.7em;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+        .month-price .mp-hour {
+            display: block;
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 4px;
+        }
+        .month-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .meta-chip {
+            background: #eef4ff;
+            color: #0056b3;
+            border-radius: 15px;
+            padding: 5px 14px;
+            font-size: 0.83em;
+            font-weight: 600;
+        }
+        .audience {
+            background: #fffdf0;
+            border-left: 4px solid #f39c12;
+            padding: 10px 15px;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+        }
+        .topic-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .topic-list li {
+            padding: 8px 0 8px 28px;
+            position: relative;
+            border-bottom: 1px dashed #eee;
+            font-size: 0.96em;
+        }
+        .topic-list li:last-child { border-bottom: none; }
+        .topic-list li:before {
+            content: "\2713";
+            color: #28a745;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .month-actions {
+            margin-top: 20px;
+        }
+        .track-table-wrap {
+            overflow-x: auto;
+            margin-bottom: 40px;
+        }
+        table.track-table, table.schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        table.track-table th, table.schedule-table th {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 14px 16px;
+            text-align: left;
+            font-size: 0.95em;
+        }
+        table.track-table td, table.schedule-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #eee;
+            font-size: 0.95em;
+            vertical-align: middle;
+        }
+        table.track-table tr:last-child td { border-bottom: none; }
+        .entry-pill {
+            display: inline-block;
+            background: #007bff;
+            color: #fff;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+        }
+        .invest {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .cert-badge {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 18px;
+            background: linear-gradient(135deg, #1a1a2e, #0f3460);
+            color: #fff;
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin-bottom: 40px;
+        }
+        .cert-badge .cert-icon {
+            font-size: 2.4em;
+        }
+        .cert-badge h4 {
+            margin: 0 0 5px;
+            color: #f39c12;
+            font-size: 1.2em;
+        }
+        .cert-badge p {
+            margin: 0;
+            font-size: 0.97em;
+            opacity: 0.92;
+        }
+        .cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        @media (max-width: 768px) {
+            .pricing-wrap { grid-template-columns: 1fr; }
+            .month-head { flex-direction: column; }
+            .month-price { text-align: left; width: 100%; }
+            .flow-arrow { transform: rotate(90deg); }
+            .program-flow { flex-direction: column; }
+            .flow-step { min-width: 100%; }
         }
     </style>
 </head>
@@ -62,7 +382,6 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="courses.html">Courses</a></li>
                     <li><a href="full-stack-data-engineering-syllabus.html">Data Engineering</a></li>
-                    <li><a href="data-ai-platform-engineering.html">Platform Engineering</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
@@ -72,414 +391,295 @@
 
     <section id="page-hero">
         <div class="container">
-            <h2>Master the Modern Data Stack</h2>
-            <p>Industry-Led Training by Expert Data Architects</p>
+            <h2>Spark Data Academy &mdash; Flagship Data Engineering Program</h2>
+            <p>4 Sprints &bull; 80 Live Hours &bull; Pay Month-by-Month</p>
         </div>
     </section>
 
     <section id="courses-list" class="light-bg">
         <div class="container">
-            <p>At <strong>Spark Data Academy</strong>, we bridge the gap between theory and industry-grade engineering. Our curriculum is designed around the 2026 data landscape, focusing on high-performance tools and cloud-native architectures.</p>
 
             <div class="course-item flagship-course">
-                <span class="badge">Most Popular / Career Track</span>
-                <h3>Full Stack Data Engineering (End-to-End)</h3>
-                <p>Our comprehensive flagship program designed to turn you into a production-ready Data Engineer. Learn the entire lifecycle: from raw data ingestion to cloud-based Lakehouse orchestration.</p>
-                <ul>
-                    <li><strong>Modules Covered:</strong> Python, SQL, PySpark, Azure Databricks, Azure Data Factory, Microsoft Fabric, AWS, Streaming, Git/CI-CD & Career Prep.</li>
-                    <li><strong>Certifications:</strong> Fabric Data Engineer Associate (DP-700) & Azure Databricks Data Engineer Associate (DP-750) Prep.</li>
-                    <li><strong>Real-World Project:</strong> Build a production-grade Jira Analytics Pipeline using Medallion Architecture.</li>
-                    <li><strong>Duration:</strong> 80-120 Hours | 4-6 Months (Choose Your Pace)</li>
-                    <li><strong>Mode:</strong> Online Live Interactive Sessions</li>
-                    <li><strong>Price:</strong> Starting from INR 40,000 (33% OFF - Limited Time)</li>
-                    <li><strong>Validity:</strong> 2 Years</li>
-                    <li><strong>Outcome:</strong> Portfolio-ready GitHub projects, Certification Prep & Job Placement Guidance.</li>
-                </ul>
-                <a href="full-stack-data-engineering-syllabus.html" class="button primary">View Full Syllabus & Pricing</a>
+                <span class="badge badge-launch">33% OFF Launch Offer</span>
+                <span class="badge" style="background:#1a1a2e;">Flagship Program</span>
+                <h3>Flagship Data Engineering Program</h3>
+                <p>A modern, 4-month modular program that takes you from absolute basics to senior-level Data Engineering. Every month is a self-contained 4-week sprint &mdash; enter at your level, and exit, pause, or continue after any sprint.</p>
+
+                <div class="pricing-wrap">
+                    <div>
+                        <ul class="pricing-facts">
+                            <li><strong>Pacing &amp; Format:</strong> 4 Weeks per Month | 5 Live Sessions/Week (1 Hour/Session = 20 Hours/Month)</li>
+                            <li><strong>Billing Model:</strong> Pay month-by-month &mdash; enter at your level and exit or pause after any 4-week sprint</li>
+                            <li><strong>Mode:</strong> Online Live Interactive Sessions (Mon&ndash;Fri, 1 hr/day)</li>
+                            <li><strong>Certification Target:</strong> DP-750 &mdash; Azure Databricks Data Engineer Associate</li>
+                            <li><strong>Outcome:</strong> Portfolio-ready GitHub projects, DP-750 prep &amp; placement guidance</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-card">
+                        <span class="badge badge-launch" style="margin-bottom:5px;">33% OFF Launch Offer</span>
+                        <p class="price-main">&#8377;10,000 <small>/ month</small></p>
+                        <p style="margin:0;"><span class="price-old">&#8377;15,000</span><span class="price-save">(Save &#8377;5,000/mo)</span></p>
+                        <p class="price-hour">&#8377;500 / live hour</p>
+                        <p style="margin:15px 0 0; font-size:0.9em; opacity:0.9;">Standard price &#8377;15,000 &mdash; launch offer ends soon.</p>
+                    </div>
+                </div>
+
+                <div class="cta-row">
+                    <a href="contact.html" class="button primary">Enroll for Month 1</a>
+                    <a href="contact.html" class="button secondary">Fast-Track from Month 2</a>
+                    <a href="contact.html" class="button" style="background:#dc3545;">Apply for Advanced Sprint</a>
+                </div>
             </div>
 
-            <hr>
-            <h2 class="text-center" style="margin: 40px 0;">Premium Advanced Course</h2>
-            
-            <div class="course-item" style="border: 2px solid #1a1a2e; background: linear-gradient(135deg, #f0f4ff, #fff);">
-                <span class="badge" style="background: linear-gradient(135deg, #f39c12, #e74c3c);">Premium - Senior Level</span>
-                <h3>Data & AI Platform Engineering</h3>
-                <p><strong>Transition to Staff/Principal Data & AI Platform Engineer</strong></p>
-                <p>Master the art of building enterprise-grade data platforms. Learn platform architecture, Infrastructure as Code, Kubernetes for data workloads, MLOps/LLMOps, data governance at scale, and FinOps.</p>
-                <ul>
-                    <li><strong>Target Audience:</strong> Senior Data Engineers (5+ yrs), Architects, ML Engineers, Cloud/DevOps Engineers</li>
-                    <li><strong>Key Learnings:</strong> Platform Architecture, Terraform, Kubernetes, AKS, MLOps, LLMOps, Data Governance, FinOps</li>
-                    <li><strong>Duration:</strong> 60 Hours | 3 Months (1-on-1 Mentoring)</li>
-                    <li><strong>Price:</strong> INR 48,000 (INR 800/hour - 33% OFF Launch Offer)</li>
-                    <li><strong>Career Outcome:</strong> Staff/Principal Data Platform Engineer, Data Architect</li>
-                </ul>
-                <a href="data-ai-platform-engineering.html" class="button primary" style="background: #1a1a2e;">View Full Syllabus & Enroll</a>
+            <div class="lab-banner">
+                <h4>&#128187; 100% Free Lab Setup</h4>
+                <p>All practice tools (Databricks Free Edition, dbt-core, Airflow via Docker, Kafka, ChromaDB, GitHub) cost &#8377;0. No hidden server fees.</p>
             </div>
 
-            <hr>
-            <h2 class="text-center" style="margin: 40px 0;">Individual Specialization Modules</h2>
-            <p class="text-center" style="margin-bottom: 10px; color: #666;">Master specific skills with our focused modular courses. All prices in Indian Rupees (INR) | GST Included</p>
-            <p class="text-center" style="margin-bottom: 30px; color: #888; font-size: 0.9em;">1 Session = 1 Hour | 5 Sessions/Week | Learn at Your Own Pace with 2 Years Validity</p>
-
-            <!-- MODULE 1: Python for Data Engineering -->
-            <div class="course-item">
-                <h3>Python for Data Engineering <span class="module-level level-beginner">Beginner</span></h3>
-                <p>Master Python programming tailored for data engineering tasks. Build a strong foundation in Python to automate data workflows, handle files, work with APIs, and create ETL pipelines.</p>
-                <ul>
-                    <li><strong>Key Learnings:</strong></li>
-                    <li>&#10003; Python Basics: Variables, Data Types, Operators, Control Flow</li>
-                    <li>&#10003; Data Structures: Lists, Dicts, Sets, Tuples, List Comprehensions</li>
-                    <li>&#10003; File Handling: CSV, JSON, Parquet, XML Processing</li>
-                    <li>&#10003; Error Handling, Exceptions & Logging Best Practices</li>
-                    <li>&#10003; Working with REST APIs: Data Extraction & Integration</li>
-                    <li>&#10003; Pandas for Data Manipulation & Transformation</li>
-                    <li>&#10003; ETL Pipeline Development with Python</li>
-                    <li>&#10003; Real-world Project: Build a data extraction pipeline from multiple APIs</li>
-                    <li><strong>Duration:</strong> 20 Hours | 4 Weeks (1 Month)</li>
-                    <li><strong>Prerequisites:</strong> Basic computer literacy</li>
-                    <li><strong>Price:</strong> INR 10,000 (INR 500/hour)</li>
-                </ul>
-                <a href="contact.html" class="button">Enroll Now</a>
+            <div class="structure-banner">
+                <h3>SPARK DATA ACADEMY &mdash; FLAGSHIP DATA ENGINEERING PROGRAM</h3>
+                <p>Structure: 4 Sprints | 20 Hours per Sprint (1 hr/day, Mon&ndash;Fri) | &#8377;10,000 per Sprint</p>
             </div>
 
-            <!-- MODULE 2: Advanced SQL for Data Engineering -->
-            <div class="course-item">
-                <h3>Advanced SQL for Data Engineering <span class="module-level level-beginner">Beginner</span></h3>
-                <p>Master complex SQL concepts essential for data engineering. Learn advanced querying techniques, performance tuning, and data modeling for enterprise-level data operations.</p>
-                <ul>
-                    <li><strong>Key Learnings:</strong></li>
-                    <li>&#10003; Advanced Window Functions: ROW_NUMBER, RANK, DENSE_RANK, LAG, LEAD</li>
-                    <li>&#10003; Common Table Expressions (CTEs) & Recursive Queries</li>
-                    <li>&#10003; Complex Joins: INNER, LEFT, RIGHT, FULL, CROSS, SELF</li>
-                    <li>&#10003; Subqueries, Correlated Subqueries & Query Optimization</li>
-                    <li>&#10003; Stored Procedures, Functions & Triggers</li>
-                    <li>&#10003; Database Indexing & Query Performance Tuning</li>
-                    <li>&#10003; Data Modeling: Star Schema vs Snowflake Schema</li>
-                    <li>&#10003; Transaction Management & ACID Properties</li>
-                    <li>&#10003; Real-world Project: Design and optimize a retail analytics database</li>
-                    <li><strong>Duration:</strong> 20 Hours | 4 Weeks (1 Month)</li>
-                    <li><strong>Prerequisites:</strong> Basic SQL knowledge</li>
-                    <li><strong>Price:</strong> INR 10,000 (INR 500/hour)</li>
-                </ul>
-                <a href="contact.html" class="button">Enroll Now</a>
+            <div class="program-flow">
+                <div class="flow-step">
+                    <span class="flow-month">Month 1</span>
+                    <span class="flow-price">&#8377;10,000</span>
+                    <span class="flow-title">DE Foundations<br>&amp; Modeling</span>
+                </div>
+                <div class="flow-arrow">&#10132;</div>
+                <div class="flow-step">
+                    <span class="flow-month">Month 2</span>
+                    <span class="flow-price">&#8377;10,000</span>
+                    <span class="flow-title">Azure Lakehouse<br>(PySpark &amp; ADF)</span>
+                </div>
+                <div class="flow-arrow">&#10132;</div>
+                <div class="flow-step">
+                    <span class="flow-month">Month 3</span>
+                    <span class="flow-price">&#8377;10,000</span>
+                    <span class="flow-title">Modern Data Stack<br>(dbt, Airflow, CI/CD)</span>
+                </div>
+                <div class="flow-arrow">&#10132;</div>
+                <div class="flow-step">
+                    <span class="flow-month">Month 4</span>
+                    <span class="flow-price">&#8377;10,000</span>
+                    <span class="flow-title">Advanced Internals,<br>Streaming &amp; System Design</span>
+                </div>
             </div>
 
-            <!-- MODULE 3: PySpark & Big Data Processing -->
-            <div class="course-item">
-                <h3>PySpark & Big Data Processing <span class="module-level level-intermediate">Intermediate</span></h3>
-                <p>Master Apache Spark and PySpark for processing massive datasets. Learn distributed computing, Spark architecture, optimizations, and build production-grade data pipelines.</p>
-                <ul>
-                    <li><strong>Key Learnings:</strong></li>
-                    <li>&#10003; Big Data Overview & Distributed Processing Fundamentals</li>
-                    <li>&#10003; Apache Spark Core APIs: RDDs, DataFrames, Spark SQL</li>
-                    <li>&#10003; Spark DataFrame Transformations: map, filter, flatMap, reduceByKey</li>
-                    <li>&#10003; Joins, Aggregations & Window Functions in Spark</li>
-                    <li>&#10003; Apache Spark Architecture: Driver, Executors, Cluster Manager</li>
-                    <li>&#10003; Spark Internals: Catalyst Optimizer & Tungsten Engine</li>
-                    <li>&#10003; Performance Optimization: Partitioning, Bucketing, Caching, Broadcast Joins</li>
-                    <li>&#10003; Advanced Optimizations: AQE, Skew Handling</li>
-                    <li>&#10003; Reading/Writing Data: HDFS, S3, JDBC, Delta Lake</li>
-                    <li>&#10003; Apache Hive Integration with Spark</li>
-                    <li>&#10003; Real-world Project: Process and transform a 10GB+ dataset efficiently</li>
-                    <li><strong>Duration:</strong> 20 Hours | 4 Weeks (1 Month)</li>
-                    <li><strong>Prerequisites:</strong> Python & SQL basics</li>
-                    <li><strong>Price:</strong> INR 10,000 (INR 500/hour)</li>
-                </ul>
-                <a href="contact.html" class="button">Enroll Now</a>
+            <div class="track-table-wrap">
+                <table class="track-table">
+                    <thead>
+                        <tr>
+                            <th>Sprint</th>
+                            <th>Focus Area</th>
+                            <th>Duration</th>
+                            <th>Hours</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Month 1</strong></td>
+                            <td>DE Foundations &amp; Modeling</td>
+                            <td>4 Weeks</td>
+                            <td>20 Hours</td>
+                            <td>&#8377;10,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Month 2</strong></td>
+                            <td>Distributed Compute &amp; Azure Lakehouse (PySpark &amp; ADF)</td>
+                            <td>4 Weeks</td>
+                            <td>20 Hours</td>
+                            <td>&#8377;10,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Month 3</strong></td>
+                            <td>Modern Data Stack &amp; Orchestration (dbt, Airflow, CI/CD)</td>
+                            <td>4 Weeks</td>
+                            <td>20 Hours</td>
+                            <td>&#8377;10,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Month 4</strong></td>
+                            <td>Advanced Spark Internals, Streaming, GenAI &amp; System Design</td>
+                            <td>4 Weeks</td>
+                            <td>20 Hours</td>
+                            <td>&#8377;10,000</td>
+                        </tr>
+                        <tr style="background:#e8f5e9; font-weight:bold;">
+                            <td>Total</td>
+                            <td>Complete Flagship Track</td>
+                            <td>4 Months</td>
+                            <td>80 Hours</td>
+                            <td>&#8377;40,000</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
-            <!-- MODULE 4: Azure Databricks Mastery -->
-            <div class="course-item">
-                <h3>Azure Databricks Mastery <span class="module-level level-intermediate">Intermediate</span></h3>
-                <p>Master the Databricks unified analytics platform. Learn Delta Lake, Unity Catalog, Medallion Architecture, DLT pipelines, and prepare for the DP-750 certification.</p>
-                <ul>
-                    <li><strong>Key Learnings:</strong></li>
-                    <li>&#10003; What is Databricks & Why Databricks</li>
-                    <li>&#10003; Databricks Free Edition vs Azure Databricks</li>
-                    <li>&#10003; High Level Architecture of Databricks</li>
-                    <li>&#10003; Different Cluster Creation Modes</li>
-                    <li>&#10003; Different Types of Tables & Iceberg Managed Tables</li>
-                    <li>&#10003; Magic Commands & Databricks Utilities</li>
-                    <li>&#10003; Lakehouse Architecture Overview</li>
-                    <li>&#10003; Delta Lake In-Depth: ACID Transactions, Time Travel</li>
-                    <li>&#10003; Volumes, Autoloader & Copy Into</li>
-                    <li>&#10003; Lakeflow Declarative Pipelines (Delta Live Tables)</li>
-                    <li>&#10003; Medallion Architecture: Bronze, Silver, Gold Layers</li>
-                    <li>&#10003; Unity Catalog Governance & Databricks Asset Bundles</li>
-                    <li>&#10003; DP-750 Certification Prep: Azure Databricks Data Engineer Associate</li>
-                    <li><strong>Duration:</strong> 20 Hours | 4 Weeks (1 Month)</li>
-                    <li><strong>Prerequisites:</strong> PySpark basics</li>
-                    <li><strong>Price:</strong> INR 10,000 (INR 500/hour)</li>
+            <h2 class="text-center" style="margin: 40px 0;">4-Month Flagship Modular Program</h2>
+
+            <!-- MONTH 1 -->
+            <div class="month-card m1">
+                <div class="month-head">
+                    <h3>Month 1: Data Engineering Foundations &amp; Modeling</h3>
+                    <div class="month-price">
+                        <span class="mp-now">&#8377;10,000 <small>/ month</small></span>
+                        <span class="mp-tag">33% OFF</span>
+                        <span class="mp-hour"><span class="mp-old">&#8377;15,000</span> (Save &#8377;5,000/mo) &bull; &#8377;500 / live hour</span>
+                    </div>
+                </div>
+                <div class="month-meta">
+                    <span class="meta-chip">4 Weeks (20 Hours)</span>
+                    <span class="meta-chip">Beginner Friendly</span>
+                    <span class="meta-chip">Live Online</span>
+                </div>
+                <p class="audience"><strong>Target Audience:</strong> Beginners, Non-Programmers, Freshers, BI/SQL Analysts</p>
+                <ul class="topic-list">
+                    <li>Linux CLI, Bash essentials, and modern developer tooling</li>
+                    <li>Git &amp; GitHub: Branching strategies, Pull Requests, merge conflict handling</li>
+                    <li>Python for DE: Data structures, OOP, file handling (JSON, CSV, Parquet), REST APIs, error logging</li>
+                    <li>Advanced SQL: Window functions (<code>ROW_NUMBER</code>, <code>DENSE_RANK</code>, <code>LEAD</code>/<code>LAG</code>), CTEs, recursive queries, index mechanics, query plan optimization</li>
+                    <li>Enterprise Data Modeling: OLTP vs. OLAP, Kimball Dimensional Modeling (Star vs. Snowflake schema), Fact vs. Dimension tables, Slowly Changing Dimensions (SCD Type 1, 2, and 3)</li>
                 </ul>
-                <a href="contact.html" class="button">Enroll Now</a>
+                <div class="month-actions">
+                    <a href="contact.html" class="button primary">Enroll for Month 1</a>
+                </div>
             </div>
 
-            <!-- MODULE 5: Azure Data Factory -->
-            <div class="course-item">
-                <h3>Azure Data Factory (ADF) <span class="module-level level-intermediate">Intermediate</span></h3>
-                <p>Master Azure Data Factory for building enterprise-grade ETL/ELT pipelines. Learn to orchestrate data movement and transformation across cloud and on-premises systems.</p>
-                <ul>
-                    <li><strong>Key Learnings:</strong></li>
-                    <li>&#10003; Azure Cloud Fundamentals for Data Engineering</li>
-                    <li>&#10003; Azure Data Factory: Pipelines, Activities & Datasets</li>
-                    <li>&#10003; Linked Services & Integration Runtimes</li>
-                    <li>&#10003; Data Flow & Mapping Data Flows</li>
-                    <li>&#10003; Copying Data from Various Sources</li>
-                    <li>&#10003; Debugging & Monitoring Pipelines</li>
-                    <li>&#10003; Triggers & Pipeline Orchestration</li>
-                    <li>&#10003; Real-world Project: Build an end-to-end ETL pipeline</li>
-                    <li><strong>Duration:</strong> 10 Hours | 2 Weeks</li>
-                    <li><strong>Prerequisites:</strong> Basic Azure & SQL knowledge</li>
-                    <li><strong>Price:</strong> INR 5,000 (INR 500/hour)</li>
+            <!-- MONTH 2 -->
+            <div class="month-card m2">
+                <div class="month-head">
+                    <h3>Month 2: Distributed Compute &amp; Azure Lakehouse</h3>
+                    <div class="month-price">
+                        <span class="mp-now">&#8377;10,000 <small>/ month</small></span>
+                        <span class="mp-tag">33% OFF</span>
+                        <span class="mp-hour"><span class="mp-old">&#8377;15,000</span> (Save &#8377;5,000/mo) &bull; &#8377;500 / live hour</span>
+                    </div>
+                </div>
+                <div class="month-meta">
+                    <span class="meta-chip">4 Weeks (20 Hours)</span>
+                    <span class="meta-chip">Intermediate</span>
+                    <span class="meta-chip">Fast-Track Entry</span>
+                </div>
+                <p class="audience"><strong>Target Audience:</strong> Developers transitioning into Big Data, QA/ETL/BI Developers</p>
+                <ul class="topic-list">
+                    <li>Azure Cloud Foundation: Resource hierarchy, ADLS Gen2 hierarchical namespace, Entra ID, Managed Identities, Azure Key Vault</li>
+                    <li>Apache Spark Architecture: Driver, Executors, Tasks, Stages, DAG, Catalyst optimizer</li>
+                    <li>PySpark DataFrame API: Transformations, Actions, aggregations, joins, complex nested JSON schemas</li>
+                    <li>Azure Databricks &amp; Delta Lake: Workspaces, Unity Catalog governance, Delta ACID transactions, Time Travel, schema evolution, Medallion Architecture (Bronze &rarr; Silver &rarr; Gold)</li>
+                    <li>Azure Data Factory (ADF): Linked Services, Datasets, Copy Pipelines, dynamic parameters, triggers, orchestrating Databricks jobs</li>
                 </ul>
-                <a href="contact.html" class="button">Enroll Now</a>
+                <div class="month-actions">
+                    <a href="contact.html" class="button secondary">Fast-Track from Month 2</a>
+                </div>
             </div>
 
-            <!-- MODULE 6: Microsoft Fabric (DP-700 Path) -->
-            <div class="course-item">
-                <h3>Microsoft Fabric (DP-700 Path) <span class="module-level level-intermediate">Intermediate</span></h3>
-                <p>Master the all-in-one analytics solution from Microsoft. Learn OneLake, Lakehouse, Warehouse, Data Factory pipelines, and prepare for the Fabric Data Engineer Associate (DP-700) certification.</p>
-                <ul>
-                    <li><strong>Key Learnings:</strong></li>
-                    <li>&#10003; Microsoft Fabric Architecture Overview</li>
-                    <li>&#10003; OneLake: The Unified Data Lake</li>
-                    <li>&#10003; Lakehouse vs Warehouse in Fabric</li>
-                    <li>&#10003; Data Factory Pipelines in Fabric</li>
-                    <li>&#10003; Synapse Data Engineering in Fabric</li>
-                    <li>&#10003; Dataflows Gen2 & Power Query Online</li>
-                    <li>&#10003; Real-Time Intelligence in Fabric</li>
-                    <li>&#10003; DP-700 Certification Prep: Fabric Data Engineer Associate</li>
-                    <li>&#10003; Exam Strategies & Practice Tests</li>
-                    <li><strong>Duration:</strong> 15 Hours | 3 Weeks</li>
-                    <li><strong>Prerequisites:</strong> Basic Cloud & SQL knowledge</li>
-                    <li><strong>Price:</strong> INR 7,500 (INR 500/hour)</li>
+            <!-- MONTH 3 -->
+            <div class="month-card m3">
+                <div class="month-head">
+                    <h3>Month 3: Modern Data Stack &amp; Orchestration</h3>
+                    <div class="month-price">
+                        <span class="mp-now">&#8377;10,000 <small>/ month</small></span>
+                        <span class="mp-tag">33% OFF</span>
+                        <span class="mp-hour"><span class="mp-old">&#8377;15,000</span> (Save &#8377;5,000/mo) &bull; &#8377;500 / live hour</span>
+                    </div>
+                </div>
+                <div class="month-meta">
+                    <span class="meta-chip">4 Weeks (20 Hours)</span>
+                    <span class="meta-chip">Advanced</span>
+                    <span class="meta-chip">Upskilling Sprint</span>
+                </div>
+                <p class="audience"><strong>Target Audience:</strong> Engineers building production-ready, testable, and automated pipelines</p>
+                <ul class="topic-list">
+                    <li>Analytics Engineering with dbt-core: CLI setup, <code>dbt_project.yml</code>, profiles, materializations (Views, Tables, Incremental, Ephemeral), Jinja &amp; modular macros</li>
+                    <li>Data Quality &amp; Governance: dbt generic schema tests, custom singular SQL tests, data lineage generation, data contracts</li>
+                    <li>Workflow Orchestration with Apache Airflow: Airflow architecture, local deployment via Docker/Astro CLI, DAG authoring, task dependencies, retries, sensors, <code>DatabricksSubmitRunOperator</code></li>
+                    <li>DE DevOps &amp; CI/CD: Linting with <code>sqlfluff</code> and <code>flake8</code>, unit testing with <code>pytest</code>, automated GitHub Actions workflows deploying dbt models and DAGs</li>
                 </ul>
-                <a href="contact.html" class="button">Enroll Now</a>
+                <div class="month-actions">
+                    <a href="contact.html" class="button" style="background:#f39c12;">Apply for Advanced Sprint</a>
+                </div>
             </div>
 
-            <!-- MODULE 7: AWS Cloud for Data Engineering -->
-            <div class="course-item">
-                <h3>AWS Cloud for Data Engineering <span class="module-level level-intermediate">Intermediate</span></h3>
-                <p>Learn AWS services essential for data engineering. Master S3, Athena, Glue, EMR, and build scalable data solutions on the AWS cloud platform.</p>
-                <ul>
-                    <li><strong>Key Learnings:</strong></li>
-                    <li>&#10003; AWS S3: Data Lake Storage & Best Practices</li>
-                    <li>&#10003; AWS Athena: Serverless Query Service</li>
-                    <li>&#10003; AWS Glue: ETL & Data Catalog</li>
-                    <li>&#10003; Big Data on AWS: EMR & Redshift Overview</li>
-                    <li>&#10003; Reading/Writing Data from S3 with PySpark</li>
-                    <li>&#10003; Building Data Lakes on AWS</li>
-                    <li>&#10003; Real-world Project: Build a data pipeline on AWS</li>
-                    <li><strong>Duration:</strong> 10 Hours | 2 Weeks</li>
-                    <li><strong>Prerequisites:</strong> Basic PySpark & Cloud concepts</li>
-                    <li><strong>Price:</strong> INR 5,000 (INR 500/hour)</li>
+            <!-- MONTH 4 -->
+            <div class="month-card m4">
+                <div class="month-head">
+                    <h3>Month 4: Advanced Spark Internals, Streaming, GenAI &amp; System Design</h3>
+                    <div class="month-price">
+                        <span class="mp-now">&#8377;10,000 <small>/ month</small></span>
+                        <span class="mp-tag">33% OFF</span>
+                        <span class="mp-hour"><span class="mp-old">&#8377;15,000</span> (Save &#8377;5,000/mo) &bull; &#8377;500 / live hour</span>
+                    </div>
+                </div>
+                <div class="month-meta">
+                    <span class="meta-chip">4 Weeks (20 Hours)</span>
+                    <span class="meta-chip">Senior / Lead Level</span>
+                    <span class="meta-chip">Capstone Sprint</span>
+                </div>
+                <p class="audience"><strong>Target Audience:</strong> Working Data Engineers targeting Senior/Lead roles and high-compensation packages</p>
+                <ul class="topic-list">
+                    <li>Spark Performance Tuning &amp; Optimization: Adaptive Query Execution (AQE), dynamic partition pruning, broadcast vs. sort-merge joins, resolving data skew with salting, memory tuning, <code>OPTIMIZE</code>, <code>Z-ORDER</code>, Liquid Clustering</li>
+                    <li>Real-Time Event Streaming with Apache Kafka: Distributed architecture, topics, partitions, consumer groups, offset management, high-throughput Python producers</li>
+                    <li>PySpark Structured Streaming &amp; Event Hubs: <code>readStream</code>/<code>writeStream</code>, micro-batches, windowing, watermarks, stateful processing, checkpointing, Azure Event Hubs Kafka integration</li>
+                    <li>GenAI Data Ingestion &amp; Vector Pipelines: Unstructured text extraction, chunking strategies, local embeddings, vector DB ingestion (ChromaDB / Databricks Vector Search)</li>
+                    <li>Capstone &amp; Placement Prep: End-to-end Jira Analytics Lakehouse pipeline, Enterprise System Design interview scenarios, DP-750 certification prep, resume and portfolio optimization</li>
                 </ul>
-                <a href="contact.html" class="button">Enroll Now</a>
+                <div class="month-actions">
+                    <a href="contact.html" class="button" style="background:#dc3545;">Apply for Advanced Sprint</a>
+                </div>
             </div>
 
-            <!-- MODULE 8: Streaming & Real-Time Processing -->
-            <div class="course-item">
-                <h3>Streaming & Real-Time Processing <span class="module-level level-advanced">Advanced</span></h3>
-                <p>Master real-time data processing with Apache Kafka and Spark Structured Streaming. Build low-latency data pipelines for live analytics and event-driven architectures.</p>
-                <ul>
-                    <li><strong>Key Learnings:</strong></li>
-                    <li>&#10003; Spark Structured Streaming Fundamentals</li>
-                    <li>&#10003; Apache Kafka: Architecture & Core Concepts</li>
-                    <li>&#10003; Kafka Producers, Consumers & Topics</li>
-                    <li>&#10003; Integrating Kafka with Spark Streaming</li>
-                    <li>&#10003; Real-Time Data Pipelines & Window Operations</li>
-                    <li>&#10003; Handling Late Data & Watermarking</li>
-                    <li>&#10003; Real-world Project: Build a real-time analytics pipeline</li>
-                    <li><strong>Duration:</strong> 10 Hours | 2 Weeks</li>
-                    <li><strong>Prerequisites:</strong> PySpark & Databricks basics</li>
-                    <li><strong>Price:</strong> INR 5,000 (INR 500/hour)</li>
-                </ul>
-                <a href="contact.html" class="button">Enroll Now</a>
+            <div class="cert-badge">
+                <span class="cert-icon">&#127942;</span>
+                <div>
+                    <h4>Certification Target: DP-750</h4>
+                    <p>Azure Databricks Data Engineer Associate &mdash; exam strategies, practice tests and guided preparation are built into the program's capstone sprint.</p>
+                </div>
             </div>
 
-            <!-- MODULE 9: Git, CI/CD & DevOps for Data Engineering -->
-            <div class="course-item">
-                <h3>Git, CI/CD & DevOps for Data Engineering <span class="module-level level-beginner">Beginner</span></h3>
-                <p>Learn version control, collaboration, and CI/CD best practices for data engineering projects. Master Git, GitHub, and automate your data pipeline deployments.</p>
-                <ul>
-                    <li><strong>Key Learnings:</strong></li>
-                    <li>&#10003; Git Fundamentals: Init, Commit, Branch, Merge, Rebase</li>
-                    <li>&#10003; GitHub Collaboration: Pull Requests, Code Reviews</li>
-                    <li>&#10003; CI/CD Pipelines for Data Engineering Projects</li>
-                    <li>&#10003; Version Control Best Practices</li>
-                    <li>&#10003; Databricks Asset Bundles for Deployment</li>
-                    <li>&#10003; Automated Testing & Code Quality</li>
-                    <li><strong>Duration:</strong> 5 Hours | 1 Week</li>
-                    <li><strong>Prerequisites:</strong> None</li>
-                    <li><strong>Price:</strong> INR 2,500 (INR 500/hour)</li>
-                </ul>
-                <a href="contact.html" class="button">Enroll Now</a>
+            <h2 class="text-center" style="margin: 40px 0;">Where Should You Start?</h2>
+            <p class="text-center" style="margin-bottom: 25px; color:#666;">Pick your entry point based on your current background &mdash; you only pay for the months you attend.</p>
+
+            <div class="track-table-wrap">
+                <table class="track-table">
+                    <thead>
+                        <tr>
+                            <th>Current Background</th>
+                            <th>Recommended Entry</th>
+                            <th>Total Duration</th>
+                            <th>Total Investment</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Complete Beginner / Non-IT / Freshers</strong></td>
+                            <td><span class="entry-pill">Month 1</span> (Full 4-Month Track)</td>
+                            <td>4 Months (80 Hours)</td>
+                            <td><span class="invest">&#8377;40,000</span><br><small>Pay &#8377;10,000/mo, originally &#8377;60,000</small></td>
+                            <td><a href="contact.html" class="button primary" style="padding:8px 16px; font-size:0.85em;">Enroll for Month 1</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Developers / QA / BI / Data Analysts</strong></td>
+                            <td><span class="entry-pill">Month 2</span> (Fast-Track)</td>
+                            <td>3 Months (60 Hours)</td>
+                            <td><span class="invest">&#8377;30,000</span><br><small>Pay &#8377;10,000/mo, originally &#8377;45,000</small></td>
+                            <td><a href="contact.html" class="button secondary" style="padding:8px 16px; font-size:0.85em;">Fast-Track from Month 2</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Working Data Engineers (Upskilling for 20+ LPA)</strong></td>
+                            <td><span class="entry-pill">Month 3 or Month 4</span></td>
+                            <td>1&ndash;2 Months (20&ndash;40 Hours)</td>
+                            <td><span class="invest">&#8377;10,000 &ndash; &#8377;20,000</span><br><small>Pay &#8377;10,000/mo</small></td>
+                            <td><a href="contact.html" class="button" style="background:#dc3545; padding:8px 16px; font-size:0.85em;">Apply for Advanced Sprint</a></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
-            <!-- MODULE 10: Career Prep & Interview Mastery -->
-            <div class="course-item">
-                <h3>Career Prep & Interview Mastery <span class="module-level level-beginner">Beginner</span></h3>
-                <p>Complete career preparation module for data engineering roles. Build your resume, optimize LinkedIn & Naukri profiles, and ace technical interviews with mock sessions.</p>
-                <ul>
-                    <li><strong>Key Learnings:</strong></li>
-                    <li>&#10003; Resume Building for Data Engineering Roles</li>
-                    <li>&#10003; LinkedIn Profile Optimization for Job Visibility</li>
-                    <li>&#10003; Naukri Profile Building & Job Applications</li>
-                    <li>&#10003; Data Engineering Interview Questions: PySpark, SQL, Databricks</li>
-                    <li>&#10003; Azure Data Engineer Interview Questions</li>
-                    <li>&#10003; Data Structures & Algorithms for Technical Interviews</li>
-                    <li>&#10003; Mock Interviews & Salary Negotiation Tips</li>
-                    <li>&#10003; Portfolio Building with GitHub Projects</li>
-                    <li><strong>Duration:</strong> 5 Hours | 1 Week</li>
-                    <li><strong>Prerequisites:</strong> Technical course completion recommended</li>
-                    <li><strong>Price:</strong> INR 2,500 (INR 500/hour)</li>
-                </ul>
-                <a href="contact.html" class="button">Enroll Now</a>
-            </div>
-
-            <hr style="margin: 40px 0;">
-
-            <h2 class="text-center" style="margin: 40px 0;">Module Comparison</h2>
-            <table class="schedule-table" style="background: white;">
-                <thead>
-                    <tr>
-                        <th>Module</th>
-                        <th>Level</th>
-                        <th>Hours</th>
-                        <th>Duration</th>
-                        <th>Price (INR)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Python for Data Engineering</strong></td>
-                        <td><span class="module-level level-beginner">Beginner</span></td>
-                        <td>20 Hours</td>
-                        <td>1 Month</td>
-                        <td>INR 10,000</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Advanced SQL for Data Engineering</strong></td>
-                        <td><span class="module-level level-beginner">Beginner</span></td>
-                        <td>20 Hours</td>
-                        <td>1 Month</td>
-                        <td>INR 10,000</td>
-                    </tr>
-                    <tr>
-                        <td><strong>PySpark & Big Data Processing</strong></td>
-                        <td><span class="module-level level-intermediate">Intermediate</span></td>
-                        <td>20 Hours</td>
-                        <td>1 Month</td>
-                        <td>INR 10,000</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Azure Databricks Mastery</strong></td>
-                        <td><span class="module-level level-intermediate">Intermediate</span></td>
-                        <td>20 Hours</td>
-                        <td>1 Month</td>
-                        <td>INR 10,000</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Azure Data Factory (ADF)</strong></td>
-                        <td><span class="module-level level-intermediate">Intermediate</span></td>
-                        <td>10 Hours</td>
-                        <td>2 Weeks</td>
-                        <td>INR 5,000</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Microsoft Fabric (DP-700)</strong></td>
-                        <td><span class="module-level level-intermediate">Intermediate</span></td>
-                        <td>15 Hours</td>
-                        <td>3 Weeks</td>
-                        <td>INR 7,500</td>
-                    </tr>
-                    <tr>
-                        <td><strong>AWS Cloud for Data Engineering</strong></td>
-                        <td><span class="module-level level-intermediate">Intermediate</span></td>
-                        <td>10 Hours</td>
-                        <td>2 Weeks</td>
-                        <td>INR 5,000</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Streaming & Real-Time Processing</strong></td>
-                        <td><span class="module-level level-advanced">Advanced</span></td>
-                        <td>10 Hours</td>
-                        <td>2 Weeks</td>
-                        <td>INR 5,000</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Git, CI/CD & DevOps</strong></td>
-                        <td><span class="module-level level-beginner">Beginner</span></td>
-                        <td>5 Hours</td>
-                        <td>1 Week</td>
-                        <td>INR 2,500</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Career Prep & Interview Mastery</strong></td>
-                        <td><span class="module-level level-beginner">Beginner</span></td>
-                        <td>5 Hours</td>
-                        <td>1 Week</td>
-                        <td>INR 2,500</td>
-                    </tr>
-                    <tr style="background: #e8f5e9; font-weight: bold;">
-                        <td><strong>Total (All Modules)</strong></td>
-                        <td>-</td>
-                        <td><strong>135 Hours</strong></td>
-                        <td><strong>~7 Months</strong></td>
-                        <td><strong>INR 67,500</strong></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h2 class="text-center" style="margin: 40px 0;">Recommended Learning Paths</h2>
-            
-            <div class="course-item" style="border-left: 5px solid #28a745;">
-                <h3>Path 1: Complete Beginner (No Coding Background)</h3>
-                <p><strong>Duration:</strong> ~5 Months | <strong>Total Hours:</strong> 100 Hours | <strong>Total Price:</strong> INR 50,000</p>
-                <ul>
-                    <li>&#9312; Python for Data Engineering (20 hrs)</li>
-                    <li>&#9313; Advanced SQL for Data Engineering (20 hrs)</li>
-                    <li>&#9314; PySpark & Big Data Processing (20 hrs)</li>
-                    <li>&#9315; Azure Databricks Mastery (20 hrs)</li>
-                    <li>&#9316; Git, CI/CD & DevOps (5 hrs) + Career Prep (5 hrs)</li>
-                </ul>
-                <p style="color: #28a745;"><strong>Or choose:</strong> <a href="full-stack-data-engineering-syllabus.html">Professional Track Program</a> at INR 50,000 (includes all modules + certifications)</p>
-            </div>
-
-            <div class="course-item" style="border-left: 5px solid #007bff;">
-                <h3>Path 2: Developer Transitioning to Data Engineering</h3>
-                <p><strong>Duration:</strong> ~3 Months | <strong>Total Hours:</strong> 75 Hours | <strong>Total Price:</strong> INR 37,500</p>
-                <ul>
-                    <li>&#9312; Advanced SQL for Data Engineering (20 hrs)</li>
-                    <li>&#9313; PySpark & Big Data Processing (20 hrs)</li>
-                    <li>&#9314; Azure Databricks Mastery (20 hrs)</li>
-                    <li>&#9315; Microsoft Fabric (DP-700) (15 hrs)</li>
-                </ul>
-                <p style="color: #007bff;"><strong>Or choose:</strong> <a href="full-stack-data-engineering-syllabus.html">Fast Track Program</a> at INR 40,000 (includes all modules + certifications)</p>
-            </div>
-
-            <div class="course-item" style="border-left: 5px solid #7b2d8e;">
-                <h3>Path 3: Cloud Data Engineer (Azure + AWS Focus)</h3>
-                <p><strong>Duration:</strong> ~3 Months | <strong>Total Hours:</strong> 65 Hours | <strong>Total Price:</strong> INR 32,500</p>
-                <ul>
-                    <li>&#9312; Azure Databricks Mastery (20 hrs)</li>
-                    <li>&#9313; Azure Data Factory (10 hrs)</li>
-                    <li>&#9314; Microsoft Fabric (DP-700) (15 hrs)</li>
-                    <li>&#9315; AWS Cloud for Data Engineering (10 hrs)</li>
-                    <li>&#9316; Streaming & Real-Time Processing (10 hrs)</li>
-                </ul>
-            </div>
-
-            <div class="course-item" style="border-left: 5px solid #ffc107;">
-                <h3>Path 4: Complete Data Engineer (All Skills)</h3>
-                <p><strong>Duration:</strong> ~7 Months | <strong>Total Hours:</strong> 135 Hours | <strong>Total Price:</strong> INR 67,500</p>
-                <ul>
-                    <li>All 10 Individual Modules - Complete Coverage</li>
-                </ul>
-                <p style="color: #ffc107;"><strong>Best Value:</strong> <a href="full-stack-data-engineering-syllabus.html">Comprehensive Track Program</a> at INR 60,000 (Save INR 7,500!)</p>
-            </div>
-
-            <p class="text-center" style="margin-top: 50px;"><strong>Not sure which course is right for you?</strong> We offer free career counseling and a roadmap session in <strong>Telugu</strong> or English.</p>
+            <p class="text-center" style="margin-top: 50px;"><strong>Not sure which entry point is right for you?</strong> We offer free career counseling and a roadmap session in <strong>Telugu</strong> or English.</p>
             <div class="text-center">
                 <a href="contact.html" class="button primary">Schedule a Free Consultation</a>
             </div>
