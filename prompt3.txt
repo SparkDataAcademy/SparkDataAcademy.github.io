@@ -1,0 +1,17 @@
+Please apply the following text, visual, and layout fixes to the Spark Data Academy website:
+
+### 1. Fix Typos and Pricing Display Errors
+* **Month 2 & Month 4 Discount Badges:** Fix the typo where "33% OFF" is displayed as "339 OFF". It must strictly read "33% OFF".
+* **Month 3 Pricing Card:** Correct the strikethrough price from "45,000 (Save ₹5,000/ma)" to "₹15,000 (Save ₹5,000/mo)".
+* **Hero Badges De-duplication:** Remove the duplicated "DP-750 CERTIFIED CURRICULUM" and "PRODUCTION DEVOPS & DABS INCLUDED" badges in the top hero block so they only render once.
+
+### 2. Syllabus Fine-Tuning
+* In **Month 2 (Azure Lakehouse)**: 
+  - Update the last bullet to: "Azure Data Factory (ADF) & Lakeflow Jobs: Ingestion pipelines, parameters, triggers, and multi-task job scheduling".
+  - In the Unity Catalog bullet, explicitly mention: "Unity Catalog Governance: Catalogs, Schemas, Volumes, Row Filters & Column Masks".
+* In **Month 4 (Internals & Scale)**:
+  - Update the Spark tuning bullet to: "Spark Performance Tuning: Adaptive Query Execution (AQE), dynamic partition pruning, broadcast vs. sort-merge joins, resolving data skew with salting, memory tuning, and Liquid Clustering (CLUSTER BY)".
+
+### 3. Polish Layout & Responsiveness
+* Ensure the primary pricing card ("₹10,000 / month, 33% OFF") is placed neatly alongside the main program value propositions in desktop view rather than appearing as a detached block.
+* Verify all three CTAs ("Enroll for Month 1", "Fast-Track from Month 2", and "Apply for Advanced Sprint") maintain consistent button styling and open the respective contact/enrollment modal.

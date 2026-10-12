@@ -1,0 +1,48 @@
+Please update the typography and bullet point formatting across all 4 monthly syllabus cards on the Spark Data Academy website.
+
+Format rule:
+* Use a consistent "lead-in bold" pattern for every bullet point: bold only the primary technology/concept and colon (e.g., `<strong>Topic Name:</strong> Details...`), followed by the description in regular font.
+* Do not leave plain text bullets, and do not randomly bold words in the middle of sentences.
+
+Replace the content of the 4 monthly modules with the exact text below:
+
+---
+
+### Month 1: Data Engineering Foundations & Modeling
+* **Linux CLI & Developer Tooling:** Essential Bash commands, terminal navigation, package management, and developer environment setup.
+* **Git & GitHub Workflow:** Branching strategies, Pull Requests, code review best practices, and merge conflict resolution.
+* **Python for Data Engineering:** OOP principles, file handling (JSON, CSV, Parquet), REST API extraction, structured logging, and error handling.
+* **Advanced SQL & Optimization:** Window functions (ROW_NUMBER, DENSE_RANK, LEAD/LAG), CTEs, recursive queries, index mechanics, and execution plan tuning.
+* **Enterprise Data Modeling:** OLTP vs. OLAP, Kimball Dimensional Modeling (Star vs. Snowflake schema), Fact/Dimension design, and SCD Types 1, 2, and 3.
+
+---
+
+### Month 2: Distributed Compute & Azure Lakehouse
+* **Azure Cloud Foundation:** Resource hierarchy, ADLS Gen2 hierarchical namespace, Entra ID, Managed Identities, and Azure Key Vault secrets.
+* **Apache Spark Architecture:** Driver, Executors, Tasks, Stages, DAG visualization, and Catalyst optimizer internals.
+* **PySpark DataFrame API:** Transformations, actions, aggregations, distributed joins, and complex nested JSON parsing.
+* **Auto Loader (cloudFiles):** Scalable, incremental file ingestion from ADLS Gen2 with automated schema inference and evolution.
+* **Modern Delta Lake Internals:** ACID transactions, Time Travel, Deletion Vectors, and Liquid Clustering (CLUSTER BY).
+* **Medallion Architecture & Governance:** Bronze/Silver/Gold design patterns, Unity Catalog access control (Row Filters & Column Masks).
+* **Lakeflow Declarative Pipelines:** Declarative pipeline syntax (DLT), automated data quality expectations, and pipeline lineage.
+* **Azure Data Factory & Lakeflow Jobs:** Ingestion pipelines, parameters, event triggers, and multi-task Databricks job scheduling.
+
+---
+
+### Month 3: Modern Data Stack & Orchestration
+* **Analytics Engineering with dbt-core:** Project setup, dbt_project.yml, profiles, materializations (Views, Tables, Incremental, Ephemeral), and Jinja macros.
+* **Data Quality & Contracts:** Generic schema tests (unique, not_null), custom singular SQL tests, data contracts, and lineage documentation.
+* **Workflow Orchestration with Apache Airflow:** Airflow architecture, local deployment via Docker/Astro CLI, DAG authoring, task dependencies, retries, and sensors.
+* **Pipeline Observability & Alerting:** SLA monitoring, failure callbacks, and automated alerting via Slack/Teams webhooks.
+* **Databricks Asset Bundles (DABs):** Project structure (databricks.yml), Databricks CLI setup, and infrastructure-as-code deployments across environments.
+* **CI/CD via GitHub Actions:** Automated DAB validation, linting (sqlfluff, flake8), and automated unit tests (pytest) on Pull Requests.
+
+---
+
+### Month 4: Advanced Spark Internals, Streaming, GenAI & Scale
+* **Spark Performance Tuning:** Adaptive Query Execution (AQE), dynamic partition pruning, broadcast vs. sort-merge joins, and data skew resolution with salting.
+* **Spark UI Diagnostics:** Analyzing DAG stages, identifying bottlenecks, inspecting Storage/SQL tabs, and debugging memory spill (disk vs. RAM).
+* **Real-Time Streaming with Apache Kafka:** Distributed architecture, topics, partitions, consumer groups, offset management, and high-throughput Python producers.
+* **PySpark Structured Streaming:** readStream / writeStream, micro-batches, watermarking, stateful processing, and Azure Event Hubs Kafka integration.
+* **GenAI & Vector Pipelines:** Unstructured document parsing, text chunking strategies, local embedding generation, and vector DB ingestion (ChromaDB / Databricks Vector Search).
+* **Enterprise Capstone & DP-750 Prep:** End-to-end Jira Analytics Lakehouse pipeline, System Design interview scenarios, and Microsoft DP-750 exam readiness.

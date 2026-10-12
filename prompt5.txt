@@ -1,0 +1,20 @@
+Please apply these 5 quick typographical, CSS, and content fixes to `courses.html`:
+
+### 1. Fix "33% OFF" Discount Badges
+* Month 1, Month 2, and Month 3 badges currently display as "339% OFF" or "339 OFF". 
+* Update all 4 monthly cards to display strictly: `33% OFF` (ensure the `%` sign is properly encoded as UTF-8 or `&#37;`).
+
+### 2. Fix Auto Loader API String (Month 2)
+* In the Month 2 curriculum, change:
+  `Auto Loader (cloud Files):`
+  to:
+  `Auto Loader (cloudFiles):` (no space between cloud and Files).
+
+### 3. Fix Table Typo in Header Overview
+* In the main "Structure: 4 Sprints" summary table under Month 3, change `(dbt, Airflow, CICD/)` to `(dbt, Airflow, CI/CD)`.
+
+### 4. Fix Technology Badge Grid Layout
+* In the "Tools & Technologies Covered" section, ensure the container uses `display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;` (or a CSS grid) so tags like `Azure Data Factory` and `Delta Lake` sit uniformly alongside `Python`, `SQL`, `Azure Databricks`, and `dbt-core` without stray line wrapping.
+
+### 5. Fix Decision Table Cell Wrapping
+* In the "Where Should You Start?" comparison table, apply `white-space: nowrap;` to the "Total Duration" column so text like `3 Months (60 Hours)` renders cleanly on a single line without awkward line breaks.

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses - Spark Data Academy</title>
+    <title>Courses &amp; Syllabus - Spark Data Academy</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
@@ -30,7 +30,7 @@
             font-size: 0.8em;
             text-transform: uppercase;
             font-weight: bold;
-            margin-bottom: 12px;
+            margin: 0 8px 12px 0;
         }
         .badge-launch {
             background: linear-gradient(135deg, #e74c3c, #f39c12);
@@ -362,6 +362,61 @@
             justify-content: center;
             margin-top: 30px;
         }
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.65);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-box {
+            background: #fff;
+            border-radius: 12px;
+            max-width: 480px;
+            width: 100%;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+        }
+        .modal-box h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            padding-right: 25px;
+        }
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            background: none;
+            border: none;
+            font-size: 1.8em;
+            line-height: 1;
+            color: #999;
+            cursor: pointer;
+        }
+        .modal-close:hover {
+            color: #333;
+        }
+        .modal-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 22px;
+        }
+        .modal-actions .button {
+            flex: 1;
+            min-width: 170px;
+            text-align: center;
+        }
+        body.modal-open {
+            overflow: hidden;
+        }
         @media (max-width: 768px) {
             .pricing-wrap { grid-template-columns: 1fr; }
             .month-head { flex-direction: column; }
@@ -369,6 +424,8 @@
             .flow-arrow { transform: rotate(90deg); }
             .program-flow { flex-direction: column; }
             .flow-step { min-width: 100%; }
+            .cta-row .button { width: 100%; }
+            .modal-actions .button { flex: 1 1 100%; }
         }
     </style>
 </head>
@@ -381,7 +438,6 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="courses.html">Courses</a></li>
-                    <li><a href="full-stack-data-engineering-syllabus.html">Data Engineering</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
@@ -400,10 +456,19 @@
         <div class="container">
 
             <div class="course-item flagship-course">
-                <span class="badge badge-launch">33% OFF Launch Offer</span>
+                <span class="badge badge-launch">33&#37; OFF Launch Offer</span>
                 <span class="badge" style="background:#1a1a2e;">Flagship Program</span>
+                <span class="badge" style="background:linear-gradient(135deg,#1a1a2e,#0f3460);">DP-750 Certified Curriculum</span>
+                <span class="badge" style="background:linear-gradient(135deg,#007bff,#0056b3);">Production DevOps &amp; DABs Included</span>
                 <h3>Flagship Data Engineering Program</h3>
                 <p>A modern, 4-month modular program that takes you from absolute basics to senior-level Data Engineering. Every month is a self-contained 4-week sprint &mdash; enter at your level, and exit, pause, or continue after any sprint.</p>
+
+                <ul class="pricing-facts" style="margin-bottom:20px;">
+                    <li><strong>Modern Delta Lake with Liquid Clustering &amp; Deletion Vectors</strong></li>
+                    <li><strong>Automated Ingestion using Auto Loader &amp; Lakeflow Pipelines</strong></li>
+                    <li><strong>Enterprise CI/CD using Databricks Asset Bundles (DABs) &amp; GitHub Actions</strong></li>
+                    <li><strong>Deep Spark UI diagnostics &amp; memory spill troubleshooting</strong></li>
+                </ul>
 
                 <div class="pricing-wrap">
                     <div>
@@ -416,7 +481,7 @@
                         </ul>
                     </div>
                     <div class="pricing-card">
-                        <span class="badge badge-launch" style="margin-bottom:5px;">33% OFF Launch Offer</span>
+                        <span class="badge badge-launch" style="margin-bottom:5px;">33&#37; OFF Launch Offer</span>
                         <p class="price-main">&#8377;10,000 <small>/ month</small></p>
                         <p style="margin:0;"><span class="price-old">&#8377;15,000</span><span class="price-save">(Save &#8377;5,000/mo)</span></p>
                         <p class="price-hour">&#8377;500 / live hour</p>
@@ -425,9 +490,9 @@
                 </div>
 
                 <div class="cta-row">
-                    <a href="contact.html" class="button primary">Enroll for Month 1</a>
-                    <a href="contact.html" class="button secondary">Fast-Track from Month 2</a>
-                    <a href="contact.html" class="button" style="background:#dc3545;">Apply for Advanced Sprint</a>
+                    <a href="contact.html" class="button primary" onclick="return openEnrollModal('month1');">Enroll for Month 1</a>
+                    <a href="contact.html" class="button primary" onclick="return openEnrollModal('month2');">Fast-Track from Month 2</a>
+                    <a href="contact.html" class="button primary" onclick="return openEnrollModal('advanced');">Apply for Advanced Sprint</a>
                 </div>
             </div>
 
@@ -526,7 +591,7 @@
                     <h3>Month 1: Data Engineering Foundations &amp; Modeling</h3>
                     <div class="month-price">
                         <span class="mp-now">&#8377;10,000 <small>/ month</small></span>
-                        <span class="mp-tag">33% OFF</span>
+                        <span class="mp-tag">33&#37; OFF</span>
                         <span class="mp-hour"><span class="mp-old">&#8377;15,000</span> (Save &#8377;5,000/mo) &bull; &#8377;500 / live hour</span>
                     </div>
                 </div>
@@ -537,14 +602,14 @@
                 </div>
                 <p class="audience"><strong>Target Audience:</strong> Beginners, Non-Programmers, Freshers, BI/SQL Analysts</p>
                 <ul class="topic-list">
-                    <li>Linux CLI, Bash essentials, and modern developer tooling</li>
-                    <li>Git &amp; GitHub: Branching strategies, Pull Requests, merge conflict handling</li>
-                    <li>Python for DE: Data structures, OOP, file handling (JSON, CSV, Parquet), REST APIs, error logging</li>
-                    <li>Advanced SQL: Window functions (<code>ROW_NUMBER</code>, <code>DENSE_RANK</code>, <code>LEAD</code>/<code>LAG</code>), CTEs, recursive queries, index mechanics, query plan optimization</li>
-                    <li>Enterprise Data Modeling: OLTP vs. OLAP, Kimball Dimensional Modeling (Star vs. Snowflake schema), Fact vs. Dimension tables, Slowly Changing Dimensions (SCD Type 1, 2, and 3)</li>
+                    <li><strong>Linux CLI &amp; Developer Tooling:</strong> Essential Bash commands, terminal navigation, package management, and developer environment setup.</li>
+                    <li><strong>Git &amp; GitHub Workflow:</strong> Branching strategies, Pull Requests, code review best practices, and merge conflict resolution.</li>
+                    <li><strong>Python for Data Engineering:</strong> OOP principles, file handling (JSON, CSV, Parquet), REST API extraction, structured logging, and error handling.</li>
+                    <li><strong>Advanced SQL &amp; Optimization:</strong> Window functions (ROW_NUMBER, DENSE_RANK, LEAD/LAG), CTEs, recursive queries, index mechanics, and execution plan tuning.</li>
+                    <li><strong>Enterprise Data Modeling:</strong> OLTP vs. OLAP, Kimball Dimensional Modeling (Star vs. Snowflake schema), Fact/Dimension design, and SCD Types 1, 2, and 3.</li>
                 </ul>
                 <div class="month-actions">
-                    <a href="contact.html" class="button primary">Enroll for Month 1</a>
+                    <a href="contact.html" class="button primary" onclick="return openEnrollModal('month1');">Enroll for Month 1</a>
                 </div>
             </div>
 
@@ -554,7 +619,7 @@
                     <h3>Month 2: Distributed Compute &amp; Azure Lakehouse</h3>
                     <div class="month-price">
                         <span class="mp-now">&#8377;10,000 <small>/ month</small></span>
-                        <span class="mp-tag">33% OFF</span>
+                        <span class="mp-tag">33&#37; OFF</span>
                         <span class="mp-hour"><span class="mp-old">&#8377;15,000</span> (Save &#8377;5,000/mo) &bull; &#8377;500 / live hour</span>
                     </div>
                 </div>
@@ -565,14 +630,17 @@
                 </div>
                 <p class="audience"><strong>Target Audience:</strong> Developers transitioning into Big Data, QA/ETL/BI Developers</p>
                 <ul class="topic-list">
-                    <li>Azure Cloud Foundation: Resource hierarchy, ADLS Gen2 hierarchical namespace, Entra ID, Managed Identities, Azure Key Vault</li>
-                    <li>Apache Spark Architecture: Driver, Executors, Tasks, Stages, DAG, Catalyst optimizer</li>
-                    <li>PySpark DataFrame API: Transformations, Actions, aggregations, joins, complex nested JSON schemas</li>
-                    <li>Azure Databricks &amp; Delta Lake: Workspaces, Unity Catalog governance, Delta ACID transactions, Time Travel, schema evolution, Medallion Architecture (Bronze &rarr; Silver &rarr; Gold)</li>
-                    <li>Azure Data Factory (ADF): Linked Services, Datasets, Copy Pipelines, dynamic parameters, triggers, orchestrating Databricks jobs</li>
+                    <li><strong>Azure Cloud Foundation:</strong> Resource hierarchy, ADLS Gen2 hierarchical namespace, Entra ID, Managed Identities, and Azure Key Vault secrets.</li>
+                    <li><strong>Apache Spark Architecture:</strong> Driver, Executors, Tasks, Stages, DAG visualization, and Catalyst optimizer internals.</li>
+                    <li><strong>PySpark DataFrame API:</strong> Transformations, actions, aggregations, distributed joins, and complex nested JSON parsing.</li>
+                    <li><strong>Auto Loader (cloudFiles):</strong> Scalable, incremental file ingestion from ADLS Gen2 with automated schema inference and evolution.</li>
+                    <li><strong>Modern Delta Lake Internals:</strong> ACID transactions, Time Travel, Deletion Vectors, and Liquid Clustering (CLUSTER BY).</li>
+                    <li><strong>Medallion Architecture &amp; Governance:</strong> Bronze/Silver/Gold design patterns, Unity Catalog access control (Row Filters &amp; Column Masks).</li>
+                    <li><strong>Lakeflow Declarative Pipelines:</strong> Declarative pipeline syntax (DLT), automated data quality expectations, and pipeline lineage.</li>
+                    <li><strong>Azure Data Factory &amp; Lakeflow Jobs:</strong> Ingestion pipelines, parameters, event triggers, and multi-task Databricks job scheduling.</li>
                 </ul>
                 <div class="month-actions">
-                    <a href="contact.html" class="button secondary">Fast-Track from Month 2</a>
+                    <a href="contact.html" class="button primary" onclick="return openEnrollModal('month2');">Fast-Track from Month 2</a>
                 </div>
             </div>
 
@@ -582,7 +650,7 @@
                     <h3>Month 3: Modern Data Stack &amp; Orchestration</h3>
                     <div class="month-price">
                         <span class="mp-now">&#8377;10,000 <small>/ month</small></span>
-                        <span class="mp-tag">33% OFF</span>
+                        <span class="mp-tag">33&#37; OFF</span>
                         <span class="mp-hour"><span class="mp-old">&#8377;15,000</span> (Save &#8377;5,000/mo) &bull; &#8377;500 / live hour</span>
                     </div>
                 </div>
@@ -593,13 +661,15 @@
                 </div>
                 <p class="audience"><strong>Target Audience:</strong> Engineers building production-ready, testable, and automated pipelines</p>
                 <ul class="topic-list">
-                    <li>Analytics Engineering with dbt-core: CLI setup, <code>dbt_project.yml</code>, profiles, materializations (Views, Tables, Incremental, Ephemeral), Jinja &amp; modular macros</li>
-                    <li>Data Quality &amp; Governance: dbt generic schema tests, custom singular SQL tests, data lineage generation, data contracts</li>
-                    <li>Workflow Orchestration with Apache Airflow: Airflow architecture, local deployment via Docker/Astro CLI, DAG authoring, task dependencies, retries, sensors, <code>DatabricksSubmitRunOperator</code></li>
-                    <li>DE DevOps &amp; CI/CD: Linting with <code>sqlfluff</code> and <code>flake8</code>, unit testing with <code>pytest</code>, automated GitHub Actions workflows deploying dbt models and DAGs</li>
+                    <li><strong>Analytics Engineering with dbt-core:</strong> Project setup, dbt_project.yml, profiles, materializations (Views, Tables, Incremental, Ephemeral), and Jinja macros.</li>
+                    <li><strong>Data Quality &amp; Contracts:</strong> Generic schema tests (unique, not_null), custom singular SQL tests, data contracts, and lineage documentation.</li>
+                    <li><strong>Workflow Orchestration with Apache Airflow:</strong> Airflow architecture, local deployment via Docker/Astro CLI, DAG authoring, task dependencies, retries, and sensors.</li>
+                    <li><strong>Pipeline Observability &amp; Alerting:</strong> SLA monitoring, failure callbacks, and automated alerting via Slack/Teams webhooks.</li>
+                    <li><strong>Databricks Asset Bundles (DABs):</strong> Project structure (databricks.yml), Databricks CLI setup, and infrastructure-as-code deployments across environments.</li>
+                    <li><strong>CI/CD via GitHub Actions:</strong> Automated DAB validation, linting (sqlfluff, flake8), and automated unit tests (pytest) on Pull Requests.</li>
                 </ul>
                 <div class="month-actions">
-                    <a href="contact.html" class="button" style="background:#f39c12;">Apply for Advanced Sprint</a>
+                    <a href="contact.html" class="button primary" onclick="return openEnrollModal('advanced');">Apply for Advanced Sprint</a>
                 </div>
             </div>
 
@@ -609,7 +679,7 @@
                     <h3>Month 4: Advanced Spark Internals, Streaming, GenAI &amp; System Design</h3>
                     <div class="month-price">
                         <span class="mp-now">&#8377;10,000 <small>/ month</small></span>
-                        <span class="mp-tag">33% OFF</span>
+                        <span class="mp-tag">33&#37; OFF</span>
                         <span class="mp-hour"><span class="mp-old">&#8377;15,000</span> (Save &#8377;5,000/mo) &bull; &#8377;500 / live hour</span>
                     </div>
                 </div>
@@ -620,14 +690,15 @@
                 </div>
                 <p class="audience"><strong>Target Audience:</strong> Working Data Engineers targeting Senior/Lead roles and high-compensation packages</p>
                 <ul class="topic-list">
-                    <li>Spark Performance Tuning &amp; Optimization: Adaptive Query Execution (AQE), dynamic partition pruning, broadcast vs. sort-merge joins, resolving data skew with salting, memory tuning, <code>OPTIMIZE</code>, <code>Z-ORDER</code>, Liquid Clustering</li>
-                    <li>Real-Time Event Streaming with Apache Kafka: Distributed architecture, topics, partitions, consumer groups, offset management, high-throughput Python producers</li>
-                    <li>PySpark Structured Streaming &amp; Event Hubs: <code>readStream</code>/<code>writeStream</code>, micro-batches, windowing, watermarks, stateful processing, checkpointing, Azure Event Hubs Kafka integration</li>
-                    <li>GenAI Data Ingestion &amp; Vector Pipelines: Unstructured text extraction, chunking strategies, local embeddings, vector DB ingestion (ChromaDB / Databricks Vector Search)</li>
-                    <li>Capstone &amp; Placement Prep: End-to-end Jira Analytics Lakehouse pipeline, Enterprise System Design interview scenarios, DP-750 certification prep, resume and portfolio optimization</li>
+                    <li><strong>Spark Performance Tuning:</strong> Adaptive Query Execution (AQE), dynamic partition pruning, broadcast vs. sort-merge joins, and data skew resolution with salting.</li>
+                    <li><strong>Spark UI Diagnostics:</strong> Analyzing DAG stages, identifying bottlenecks, inspecting Storage/SQL tabs, and debugging memory spill (disk vs. RAM).</li>
+                    <li><strong>Real-Time Streaming with Apache Kafka:</strong> Distributed architecture, topics, partitions, consumer groups, offset management, and high-throughput Python producers.</li>
+                    <li><strong>PySpark Structured Streaming:</strong> readStream / writeStream, micro-batches, watermarking, stateful processing, and Azure Event Hubs Kafka integration.</li>
+                    <li><strong>GenAI &amp; Vector Pipelines:</strong> Unstructured document parsing, text chunking strategies, local embedding generation, and vector DB ingestion (ChromaDB / Databricks Vector Search).</li>
+                    <li><strong>Enterprise Capstone &amp; DP-750 Prep:</strong> End-to-end Jira Analytics Lakehouse pipeline, System Design interview scenarios, and Microsoft DP-750 exam readiness.</li>
                 </ul>
                 <div class="month-actions">
-                    <a href="contact.html" class="button" style="background:#dc3545;">Apply for Advanced Sprint</a>
+                    <a href="contact.html" class="button primary" onclick="return openEnrollModal('advanced');">Apply for Advanced Sprint</a>
                 </div>
             </div>
 
@@ -648,35 +719,69 @@
                         <tr>
                             <th>Current Background</th>
                             <th>Recommended Entry</th>
-                            <th>Total Duration</th>
+                            <th style="white-space: nowrap;">Total Duration</th>
                             <th>Total Investment</th>
-                            <th></th>
+                            <th>Enroll</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><strong>Complete Beginner / Non-IT / Freshers</strong></td>
                             <td><span class="entry-pill">Month 1</span> (Full 4-Month Track)</td>
-                            <td>4 Months (80 Hours)</td>
+                            <td style="white-space: nowrap;">4 Months (80 Hours)</td>
                             <td><span class="invest">&#8377;40,000</span><br><small>Pay &#8377;10,000/mo, originally &#8377;60,000</small></td>
-                            <td><a href="contact.html" class="button primary" style="padding:8px 16px; font-size:0.85em;">Enroll for Month 1</a></td>
+                            <td><a href="contact.html" class="button primary" style="padding:8px 16px; font-size:0.85em;" onclick="return openEnrollModal('month1');">Enroll for Month 1</a></td>
                         </tr>
                         <tr>
                             <td><strong>Developers / QA / BI / Data Analysts</strong></td>
                             <td><span class="entry-pill">Month 2</span> (Fast-Track)</td>
-                            <td>3 Months (60 Hours)</td>
+                            <td style="white-space: nowrap;">3 Months (60 Hours)</td>
                             <td><span class="invest">&#8377;30,000</span><br><small>Pay &#8377;10,000/mo, originally &#8377;45,000</small></td>
-                            <td><a href="contact.html" class="button secondary" style="padding:8px 16px; font-size:0.85em;">Fast-Track from Month 2</a></td>
+                            <td><a href="contact.html" class="button primary" style="padding:8px 16px; font-size:0.85em;" onclick="return openEnrollModal('month2');">Fast-Track from Month 2</a></td>
                         </tr>
                         <tr>
                             <td><strong>Working Data Engineers (Upskilling for 20+ LPA)</strong></td>
                             <td><span class="entry-pill">Month 3 or Month 4</span></td>
-                            <td>1&ndash;2 Months (20&ndash;40 Hours)</td>
+                            <td style="white-space: nowrap;">1&ndash;2 Months (20&ndash;40 Hours)</td>
                             <td><span class="invest">&#8377;10,000 &ndash; &#8377;20,000</span><br><small>Pay &#8377;10,000/mo</small></td>
-                            <td><a href="contact.html" class="button" style="background:#dc3545; padding:8px 16px; font-size:0.85em;">Apply for Advanced Sprint</a></td>
+                            <td><a href="contact.html" class="button primary" style="padding:8px 16px; font-size:0.85em;" onclick="return openEnrollModal('advanced');">Apply for Advanced Sprint</a></td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+
+            <h2 class="text-center" style="margin: 45px 0 20px;">Tools &amp; Technologies Covered</h2>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; margin: 20px 0;">
+                <span style="background: #3498db; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold;">Python</span>
+                <span style="background: #e74c3c; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold;">SQL</span>
+                <span style="background: #e25a1c; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold;">Apache Spark</span>
+                <span style="background: #ff3621; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold;">PySpark</span>
+                <span style="background: #ff3621; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold;">Azure Databricks</span>
+                <span style="background: #0078d4; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold;">Azure Data Factory</span>
+                <span style="background: #333; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold;">Delta Lake</span>
+                <span style="background: #ff694b; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold;">dbt-core</span>
+                <span style="background: #017cee; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold;">Apache Airflow</span>
+                <span style="background: #1db954; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold;">Apache Kafka</span>
+                <span style="background: #6e4ff6; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold;">ChromaDB</span>
+                <span style="background: #f05033; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold;">Git/GitHub</span>
+            </div>
+
+            <div class="module-card" style="background: #fff3cd; border-left-color: #ffc107; margin-top: 40px;">
+                <h3 style="color: #856404;">What You'll Get</h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="padding: 8px 0; padding-left: 30px; position: relative;"><span style="position: absolute; left: 0; color: #28a745; font-weight: bold;">&#10003;</span> Live Interactive Training Sessions (20 Hours per Sprint)</li>
+                    <li style="padding: 8px 0; padding-left: 30px; position: relative;"><span style="position: absolute; left: 0; color: #28a745; font-weight: bold;">&#10003;</span> Pay month-by-month &mdash; exit or pause after any 4-week sprint</li>
+                    <li style="padding: 8px 0; padding-left: 30px; position: relative;"><span style="position: absolute; left: 0; color: #28a745; font-weight: bold;">&#10003;</span> 100% Free Lab Setup (no hidden server fees)</li>
+                    <li style="padding: 8px 0; padding-left: 30px; position: relative;"><span style="position: absolute; left: 0; color: #28a745; font-weight: bold;">&#10003;</span> Real-world Projects with GitHub Portfolio</li>
+                    <li style="padding: 8px 0; padding-left: 30px; position: relative;"><span style="position: absolute; left: 0; color: #28a745; font-weight: bold;">&#10003;</span> Modern Delta Lake with Liquid Clustering &amp; Deletion Vectors</li>
+                    <li style="padding: 8px 0; padding-left: 30px; position: relative;"><span style="position: absolute; left: 0; color: #28a745; font-weight: bold;">&#10003;</span> Automated Ingestion using Auto Loader &amp; Lakeflow Pipelines</li>
+                    <li style="padding: 8px 0; padding-left: 30px; position: relative;"><span style="position: absolute; left: 0; color: #28a745; font-weight: bold;">&#10003;</span> Enterprise CI/CD using Databricks Asset Bundles (DABs) &amp; GitHub Actions</li>
+                    <li style="padding: 8px 0; padding-left: 30px; position: relative;"><span style="position: absolute; left: 0; color: #28a745; font-weight: bold;">&#10003;</span> Deep Spark UI diagnostics &amp; memory spill troubleshooting</li>
+                    <li style="padding: 8px 0; padding-left: 30px; position: relative;"><span style="position: absolute; left: 0; color: #28a745; font-weight: bold;">&#10003;</span> DP-750 (Implementing Data Engineering Solutions Using Azure Databricks) Certification Prep</li>
+                    <li style="padding: 8px 0; padding-left: 30px; position: relative;"><span style="position: absolute; left: 0; color: #28a745; font-weight: bold;">&#10003;</span> Resume, LinkedIn &amp; Naukri Profile Building</li>
+                    <li style="padding: 8px 0; padding-left: 30px; position: relative;"><span style="position: absolute; left: 0; color: #28a745; font-weight: bold;">&#10003;</span> Enterprise System Design Interview &amp; Mock Sessions</li>
+                    <li style="padding: 8px 0; padding-left: 30px; position: relative;"><span style="position: absolute; left: 0; color: #28a745; font-weight: bold;">&#10003;</span> Job Placement Guidance</li>
+                </ul>
             </div>
 
             <p class="text-center" style="margin-top: 50px;"><strong>Not sure which entry point is right for you?</strong> We offer free career counseling and a roadmap session in <strong>Telugu</strong> or English.</p>
@@ -692,5 +797,65 @@
             <p>Follow us on <a href="https://www.linkedin.com/company/sparkbigdataacademy" target="_blank">LinkedIn</a> | <a href="https://wa.me/919030456094" target="_blank">WhatsApp Us</a></p>
         </div>
     </footer>
+
+    <div class="modal-overlay" id="enrollModal" role="dialog" aria-modal="true" aria-labelledby="enrollModalTitle">
+        <div class="modal-box">
+            <button type="button" class="modal-close" onclick="closeEnrollModal()" aria-label="Close">&times;</button>
+            <h3 id="enrollModalTitle">Enroll</h3>
+            <p id="enrollModalText"></p>
+            <div class="modal-actions">
+                <a href="contact.html" class="button primary">Go to Contact Page</a>
+                <a href="#" class="button secondary" id="enrollModalWhatsapp" target="_blank" rel="noopener">Enroll via WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var enrollPrograms = {
+            month1: {
+                title: 'Enroll for Month 1',
+                text: 'Month 1: Data Engineering Foundations & Modeling (4 Weeks, 20 Hours). Ideal for beginners, non-programmers, freshers, and BI/SQL analysts.',
+                wa: 'Hi Spark Data Academy! I would like to enroll for Month 1 (Data Engineering Foundations & Modeling).'
+            },
+            month2: {
+                title: 'Fast-Track from Month 2',
+                text: 'Month 2: Distributed Compute & Azure Lakehouse (4 Weeks, 20 Hours). Ideal for developers, QA/ETL, and BI engineers.',
+                wa: 'Hi Spark Data Academy! I would like to fast-track from Month 2 (Distributed Compute & Azure Lakehouse).'
+            },
+            advanced: {
+                title: 'Apply for Advanced Sprint',
+                text: 'Month 3 (Modern Data Stack & Orchestration) or Month 4 (Advanced Spark Internals, Streaming, GenAI & System Design). For working Data Engineers upskilling to Senior/Lead roles.',
+                wa: 'Hi Spark Data Academy! I would like to apply for the Advanced Sprint (Month 3 / Month 4).'
+            }
+        };
+
+        function openEnrollModal(key) {
+            var program = enrollPrograms[key] || enrollPrograms.month1;
+            document.getElementById('enrollModalTitle').textContent = program.title;
+            document.getElementById('enrollModalText').textContent = program.text;
+            document.getElementById('enrollModalWhatsapp').href =
+                'https://wa.me/919030456094?text=' + encodeURIComponent(program.wa);
+            document.getElementById('enrollModal').classList.add('active');
+            document.body.classList.add('modal-open');
+            return false;
+        }
+
+        function closeEnrollModal() {
+            document.getElementById('enrollModal').classList.remove('active');
+            document.body.classList.remove('modal-open');
+        }
+
+        document.getElementById('enrollModal').addEventListener('click', function (event) {
+            if (event.target === this) {
+                closeEnrollModal();
+            }
+        });
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                closeEnrollModal();
+            }
+        });
+    </script>
 </body>
 </html>

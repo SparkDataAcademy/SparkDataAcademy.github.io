@@ -46,7 +46,12 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
-            align-items: center;
+            align-items: stretch;
+        }
+        .course-highlight-price {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         .course-highlight-content h3 {
             color: var(--primary-color);
@@ -130,7 +135,6 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="courses.html">Courses</a></li>
-                    <li><a href="full-stack-data-engineering-syllabus.html">Data Engineering</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
@@ -141,7 +145,7 @@
     <section id="hero">
         <div class="container">
             <h2>Ignite Your Data Career</h2>
-            <p>Master the Modern Data Stack with Industry-Led Training. From Python & SQL to PySpark, Azure Databricks, dbt, Airflow & Streaming &mdash; become a job-ready Data Engineer in our 4-Month Flagship Program.</p>
+            <p>Master the Modern Data Stack with Industry-Led Training. From Python &amp; SQL to PySpark, Azure Databricks, dbt, Airflow &amp; Streaming &mdash; become a job-ready Data Engineer in our 4-Month Flagship Program.</p>
             <div style="margin-top: 30px;">
                 <a href="courses.html" class="button" style="margin-right: 15px;">Explore Courses</a>
                 <a href="https://wa.me/919030456094?text=Hi%20Spark%20Data%20Academy!%20I%27m%20interested%20in%20your%20courses." class="button" style="background: #25D366;" target="_blank">Chat on WhatsApp</a>
@@ -181,7 +185,7 @@
                     <p>Learn directly from industry professionals with 10+ years of experience in Big Data and Data Engineering. Benefit from real-world insights and practical knowledge.</p>
                 </div>
                 <div class="feature-item">
-                    <h4>Hands-on & Project-Based</h4>
+                    <h4>Hands-on &amp; Project-Based</h4>
                     <p>Our curriculum emphasizes practical application. Work on real-world projects, build your GitHub portfolio, and gain experience with industry-standard tools.</p>
                 </div>
                 <div class="feature-item">
@@ -190,7 +194,7 @@
                 </div>
                 <div class="feature-item">
                     <h4>Career Support</h4>
-                    <p>Resume building, LinkedIn optimization, interview preparation, and job placement guidance. We don't just teach - we help you land your dream job.</p>
+                    <p>Resume building, LinkedIn optimization, interview preparation, and job placement guidance. We don't just teach &mdash; we help you land your dream job.</p>
                 </div>
             </div>
         </div>
@@ -202,20 +206,26 @@
 
             <div class="course-highlight" style="border: 2px solid #f39c12;">
                 <div class="course-highlight-content">
-                    <span style="background: linear-gradient(135deg, #e74c3c, #f39c12); color: white; padding: 5px 12px; border-radius: 15px; font-size: 0.8em; font-weight: bold;">33% OFF Launch Offer</span>
-                    <h3 style="margin-top: 12px;">Flagship Data Engineering Program</h3>
+                    <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px;">
+                        <span style="background: linear-gradient(135deg, #e74c3c, #f39c12); color: white; padding: 5px 12px; border-radius: 15px; font-size: 0.8em; font-weight: bold;">33% OFF Launch Offer</span>
+                        <span style="background: linear-gradient(135deg, #1a1a2e, #0f3460); color: white; padding: 5px 12px; border-radius: 15px; font-size: 0.8em; font-weight: bold;">DP-750 Certified Curriculum</span>
+                        <span style="background: linear-gradient(135deg, #007bff, #0056b3); color: white; padding: 5px 12px; border-radius: 15px; font-size: 0.8em; font-weight: bold;">Production DevOps &amp; DABs Included</span>
+                    </div>
+                    <h3>Flagship Data Engineering Program</h3>
                     <p>A 4-month modular program built from 4 self-contained sprints. Enter at your level and pay month-by-month &mdash; exit or pause after any sprint.</p>
                     <ul class="course-highlight-features">
                         <li>4 Sprints | 80 Live Hours (20 Hours/Month)</li>
                         <li>Python, SQL, PySpark, Azure Databricks &amp; Azure Data Factory</li>
-                        <li>Modern Data Stack: dbt-core, Airflow &amp; CI/CD</li>
-                        <li>Streaming (Kafka &amp; Event Hubs), GenAI &amp; System Design</li>
-                        <li>DP-750 Certification Prep &amp; Placement Guidance</li>
+                        <li>Modern Delta Lake with Liquid Clustering &amp; Deletion Vectors</li>
+                        <li>Automated Ingestion using Auto Loader &amp; Lakeflow Pipelines</li>
+                        <li>Enterprise CI/CD using Databricks Asset Bundles (DABs) &amp; GitHub Actions</li>
+                        <li>Deep Spark UI diagnostics &amp; memory spill troubleshooting</li>
+                        <li>Streaming (Kafka &amp; Event Hubs), GenAI &amp; DP-750 Certification Prep</li>
                         <li>100% Free Lab Setup &mdash; No hidden server fees</li>
                     </ul>
-                    <a href="full-stack-data-engineering-syllabus.html" class="button" style="margin-top: 20px;">View Syllabus</a>
+                    <a href="courses.html" class="button" style="margin-top: 20px;">View Syllabus</a>
                 </div>
-                <div style="text-align: center; padding: 20px;">
+                <div class="course-highlight-price" style="text-align: center;">
                     <div style="background: linear-gradient(135deg, #007bff, #0056b3); color: white; padding: 40px; border-radius: 15px;">
                         <span style="display:inline-block; background: rgba(255,255,255,0.2); padding: 4px 14px; border-radius: 15px; font-weight: bold; font-size: 0.85em; margin-bottom: 10px;">33% OFF Launch Offer</span>
                         <h4 style="color: white; margin-bottom: 10px;">Now Only</h4>
@@ -255,7 +265,7 @@
     <section class="cta-section">
         <div class="container">
             <h3>Ready to Start Your Data Career?</h3>
-            <p>Join hundreds of successful Data Engineers trained by industry experts. Limited seats available - secure your spot today!</p>
+            <p>Join hundreds of successful Data Engineers trained by industry experts. Limited seats available &mdash; secure your spot today!</p>
             <div class="cta-buttons">
                 <a href="courses.html" class="cta-btn cta-btn-primary">Explore Courses</a>
                 <a href="https://wa.me/919030456094?text=Hi%20Spark%20Data%20Academy!%20I%27d%20like%20to%20know%20more%20about%20your%20courses." class="cta-btn cta-btn-secondary" target="_blank">Chat on WhatsApp</a>
